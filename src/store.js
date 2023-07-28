@@ -13,7 +13,8 @@ export default createStore({
     },
     setViewportIsPortable(state, orientation) {
       state.viewportIsPortable =
-        window.innerWidth < 800 && orientation === 'horizontal';
+        (window.innerWidth < 800 && orientation === 'horizontal') ||
+        (window.innerWidth < 600 && orientation === 'vertical');
     },
   },
   actions: {
