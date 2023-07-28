@@ -2,7 +2,7 @@
     <div>
       <h1>Home Page</h1>
     </div>
-  </template>
+</template>
   
   <script>
   export default {

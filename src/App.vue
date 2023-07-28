@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
@@ -11,13 +11,20 @@ export default {
   setup() {
     const store = useStore();
     const updateViewport = () => store.dispatch('updateViewport');
+    const resizeTimer = ref(null);
+
+    const tempUpdateViewport = () => {
+      clearTimeout(resizeTimer.value);
+      resizeTimer.value = setTimeout(updateViewport, 500);
+    };
 
     onMounted(() => {
-      window.addEventListener('resize', updateViewport);
+      window.addEventListener('resize', tempUpdateViewport);
     });
 
     onUnmounted(() => {
-      window.removeEventListener('resize', updateViewport);
+      window.removeEventListener('resize', tempUpdateViewport);
+      clearTimeout(resizeTimer.value);
     });
 
     return {};
