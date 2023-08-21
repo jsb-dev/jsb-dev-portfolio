@@ -1,54 +1,151 @@
+<!-- TopicCard is a component with 'topic' and 'brief' props, which returns a product-card-inspired 	
+container, displaying the value of props.topic as its header. This component has an 'Open' button 
+which, when clicked, invokes its own openModal() implementation. This implementation opens a modal 
+in the foreground, featuring the value of props.brief in a small article and a 'Close' button to 
+invoke its closeModal() implementation. -->
+
 <template>
-    <li>
-      <div class="card">
-        <h2>{{ topic }}</h2>
-        <button @click="openModal">Open</button>
+  <li>
+    <div class="card">
+      <div class="h2-container">
+        <h2 class="card-title">{{ topic }}</h2>
       </div>
-  
-      <div v-if="showModal" class="modal">
-        <article>
-          {{ brief }}
-        </article>
-        <button @click="closeModal">Close</button>
+      <div class="card-btn-container">
+        <button class="card-btn" @click="openModal">Read</button>
       </div>
-    </li>
-  </template>
-  
-  <script>
-  import { ref } from 'vue';
-  
-  export default {
-    props: {
-      topic: {
-        type: String,
-        required: true
-      },
-      brief: {
-        type: String,
-        required: true
-      }
+    </div>
+
+    <transition name="fade">
+      <div v-if="showModal" class="modal-overlay">
+        <div class="modal">
+          <article>
+            {{ brief }}
+          </article>
+          <button @click="closeModal">Close</button>
+        </div>
+      </div>
+    </transition>
+  </li>
+</template>
+
+
+<script>
+import { ref } from 'vue';
+
+export default {
+  props: {
+    topic: {
+      type: String,
+      required: true
     },
-    setup() {
-      const showModal = ref(false);
-  
-      const openModal = () => {
-        showModal.value = true;
-      };
-  
-      const closeModal = () => {
-        showModal.value = false;
-      };
-  
-      return {
-        showModal,
-        openModal,
-        closeModal
-      };
+    brief: {
+      type: String,
+      required: true
     }
-  };
-  </script>
-  
-  <style scoped>
-  /* Styling for the card and modal here */
-  </style>
-  
+  },
+  setup() {
+    const showModal = ref(false);
+
+    const openModal = () => {
+      showModal.value = true;
+    };
+
+    const closeModal = () => {
+      showModal.value = false;
+    };
+
+    return {
+      showModal,
+      openModal,
+      closeModal
+    };
+  }
+};
+</script>
+
+<style scoped>
+.card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 1rem .1rem rgba(0, 0, 0, 0.3), 0 .5rem 1rem .5rem rgba(0, 0, 0, 0.1);
+  height: 7rem;
+  width: 25rem;
+  position: relative;
+  margin: 1.5rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: inset 0 0 1rem .5rem rgba(0, 0, 0, 0.8);
+  color: white;
+  background-color: #2c2c2c;
+  border-radius: 2rem;
+  transform: translateY(-5px);
+}
+
+.card:hover .card-title {
+  color: rgb(231, 231, 231);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-btn {
+  background-color: #567ea4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+.card-btn:hover {
+  background-color: #6f5c90;
+  transform: scale(1.1);
+}
+
+.modal-overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 .5rem 2rem .5rem rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  width: 30rem;
+  height: 20rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.h2-container, .card-btn-container {
+  padding-left: 2.5rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+</style>

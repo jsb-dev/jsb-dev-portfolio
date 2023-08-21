@@ -1,5 +1,6 @@
 <template>
-    <div id="home-page">
+  <div id="home-page">
+    <section :style="listsContainerStyles" id="lists-container">
       <section>
         <TopicList :topicData="htmlTopicData" />
       </section>
@@ -7,50 +8,84 @@
       <section>
         <TopicList :topicData="cssTopicData" />
       </section>
-  
+
       <section>
         <TopicList :topicData="jsTopicData" />
       </section>
-    </div>
-  </template>
+    </section>
+  </div>
+</template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { useStore } from 'vuex';
 import TopicList from '@/components/topic-list/TopicList.vue';
 import { htmlTopicData as htmlData, cssTopicData as cssData, jsTopicData as jsData } from '@/data/topic-data.js';
 
 export default {
-  components: {
-    TopicList
-  },
-  setup() {
-    const htmlTopicData = ref([]);
-    const cssTopicData = ref([]);
-    const jsTopicData = ref([]);
+components: {
+  TopicList
+},
+setup() {
+  const store = useStore();
+  const htmlTopicData = ref([]);
+  const cssTopicData = ref([]);
+  const jsTopicData = ref([]);
 
-    const loadData = async () => {
-      htmlTopicData.value = htmlData;
-      cssTopicData.value = cssData;
-      jsTopicData.value = jsData;
+  const loadData = async () => {
+    htmlTopicData.value = htmlData;
+    cssTopicData.value = cssData;
+    jsTopicData.value = jsData;
+  };
+
+  const handleResize = () => {
+    store.dispatch('updateLayout');
+  };
+
+  onMounted(() => {
+    loadData();
+    window.addEventListener('resize', handleResize);
+  });
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', handleResize);
+  });
+
+  const listsContainerStyles = computed(() => {
+    const baseStyles = {
+      display: 'flex',
+      flexWrap: 'wrap',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
     };
+    if (store.state.viewportIsVertical && store.state.viewportIsPortable) {
+      return {
+        ...baseStyles,
+        flexWrap: 'none',
+        flexDirection: 'column',
+      };
+    } else {
+      return {
+        ...baseStyles,
+        flexDirection: 'row',
+      };
+    }
+  });
 
-    onMounted(loadData);
-
-    return {
-      htmlTopicData,
-      cssTopicData,
-      jsTopicData
-    };
-  }
+  return {
+    htmlTopicData,
+    cssTopicData,
+    jsTopicData,
+    listsContainerStyles
+  };
+}
 };
 </script>
 
-  
-  <style scoped>
-  #home-page {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-  </style>
-  
+<style scoped>
+#home-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+</style>

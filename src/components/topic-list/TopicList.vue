@@ -31,12 +31,20 @@
   </script>
   
   <style scoped>
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
   .vertical-list {
-    /* vertical list styles here */
+    flex-direction: column;
+    justify-content: center;
   }
   
   .horizontal-list {
-    /* horizontal list styles here */
+    justify-content: center;
   }
   </style>
   
