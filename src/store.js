@@ -2,29 +2,22 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    viewportOrientation:
-      window.innerWidth > window.innerHeight ? 'horizontal' : 'vertical',
-    viewportIsPortable: false,
+    viewportIsVertical: window.innerWidth < window.innerHeight,
+    viewportIsPortable:
+      (window.innerWidth < window.innerHeight && window.innerWidth < 600) ||
+      (window.innerWidth >= window.innerHeight && window.innerWidth < 950),
   },
   mutations: {
-    setViewportOrientation(state) {
-      state.viewportOrientation =
-        window.innerWidth > window.innerHeight ? 'horizontal' : 'vertical';
-    },
-    setViewportIsPortable(state, orientation) {
+    updateLayout(state) {
+      state.viewportIsVertical = window.innerWidth < window.innerHeight;
       state.viewportIsPortable =
-        (window.innerWidth < 800 && orientation === 'horizontal') ||
-        (window.innerWidth < 600 && orientation === 'vertical');
+        (state.viewportIsVertical && window.innerWidth < 600) ||
+        (!state.viewportIsVertical && window.innerWidth < 950);
     },
   },
   actions: {
-    updateViewport({ commit, state }) {
-      commit('setViewportOrientation');
-      commit('setViewportIsPortable', state.viewportOrientation);
+    updateLayout(context) {
+      context.commit('updateLayout');
     },
-  },
-  getters: {
-    isPortable: (state) => state.viewportIsPortable,
-    orientation: (state) => state.viewportOrientation,
   },
 });
