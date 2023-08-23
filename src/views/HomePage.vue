@@ -62,7 +62,7 @@ setup() {
       return {
         ...baseStyles,
         flexWrap: 'none',
-        flexDirection: 'column',
+        flexDirection: 'row',
       };
     } else {
       return {
@@ -83,9 +83,10 @@ setup() {
 </script>
 
 <style scoped>
+
 #home-page {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
 }
 </style>

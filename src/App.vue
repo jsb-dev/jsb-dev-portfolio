@@ -37,5 +37,54 @@ export default {
     height: 100vh;
     overflow: hidden;
     border-radius: 0;
+    border-radius: 2rem; 
+  }
+
+::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2rem; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 2rem; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+  border-radius: 2rem;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3b3a3a #aeaeae;
+}
+
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    min-width: 50px;
+    min-height: 20px;
+    font-size: max(1rem, 8pt);
+  }
+
+  p, li {
+    font-size: max(1rem, 8pt);
+  }
+
+  h1 {
+    font-size: max(1.2rem, 11pt);
+  }
+
+  h2 {
+    font-size: max(1rem, 8pt);
   }
 </style>

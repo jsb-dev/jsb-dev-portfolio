@@ -1,12 +1,6 @@
-<!-- TopicCard is a component with 'topic' and 'brief' props, which returns a product-card-inspired 	
-container, displaying the value of props.topic as its header. This component has an 'Open' button 
-which, when clicked, invokes its own openModal() implementation. This implementation opens a modal 
-in the foreground, featuring the value of props.brief in a small article and a 'Close' button to 
-invoke its closeModal() implementation. -->
-
 <template>
   <li>
-    <div class="card">
+    <div :class="cardClass">
       <div class="h2-container">
         <h2 class="card-title">{{ topic }}</h2>
       </div>
@@ -28,9 +22,9 @@ invoke its closeModal() implementation. -->
   </li>
 </template>
 
-
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
   props: {
@@ -44,6 +38,16 @@ export default {
     }
   },
   setup() {
+    const store = useStore();
+    const viewportIsVertical = computed(() => store.state.viewportIsVertical);
+
+    const cardClass = computed(() => {
+      return {
+        card: true,
+        'card-vertical': viewportIsVertical.value
+      };
+    });
+
     const showModal = ref(false);
 
     const openModal = () => {
@@ -57,7 +61,8 @@ export default {
     return {
       showModal,
       openModal,
-      closeModal
+      closeModal,
+      cardClass
     };
   }
 };
@@ -68,13 +73,21 @@ export default {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: inset 0 0 1rem .1rem rgba(0, 0, 0, 0.3), 0 .5rem 1rem .5rem rgba(0, 0, 0, 0.1);
-  height: 7rem;
-  width: 25rem;
+  min-height: 80px;
+  min-width: min(25rem, 24vw);
   position: relative;
   margin: 1.5rem;
   z-index: 1;
   display: flex;
   align-items: center;
+}
+
+.card-vertical {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100px;
 }
 
 .card:hover {
@@ -90,7 +103,6 @@ export default {
 }
 
 .card-title {
-  font-size: 1.2rem;
   color: #333;
 }
 
@@ -100,7 +112,6 @@ export default {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1rem;
   font-weight: 700;
   padding: 0.5rem 1rem;
 }
@@ -115,6 +126,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0;
   top: 0;
   left: 0;
   right: 0;
@@ -141,7 +153,7 @@ export default {
 }
 
 .h2-container, .card-btn-container {
-  padding-left: 2.5rem;
+  padding-left: 3.5rem;
   width: 50%;
   height: 100%;
   display: flex;
