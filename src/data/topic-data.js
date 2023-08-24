@@ -1,6 +1,6 @@
 export const htmlTopicData = [
   {
-    topic: 'HTML5 semantics',
+    topic: 'HTML5 Semantics',
     brief:
       'HTML5 introduced a variety of different tags that can be used to semantically structure a website. This allows for better accessibility and SEO by providing web browsers with as much detailed, meaningful information as possible.',
   },
@@ -25,17 +25,17 @@ export const htmlTopicData = [
       'HTML links, or hyperlinks, allow users to navigate from one web page to another. They can also be used to take someone to a seperate website, a specific part of the website, images for accreditation, and much more.',
   },
   {
-    topic: 'HTML lists',
+    topic: 'HTML Lists',
     brief:
       "Lists come with all the formatting options you might expect if you're familiar with rich text editors. They are also commonly used in iterative loops to display data from a collection.",
   },
   {
-    topic: 'Headings and paragraphs',
+    topic: 'Headings and Paragraphs',
     brief:
       'HTML headings are defined at six different levels with default styling and behaviour. Paragraphs serve as the most generic way to display text content on a page.',
   },
   {
-    topic: 'HTML attributes',
+    topic: 'HTML Attributes',
     brief:
       'Attributes, or properties, are used to outline specific configurations for certain elements. They can be used to provide additional information about an element, or to configure its behaviour and appearance.',
   },
@@ -45,7 +45,7 @@ export const htmlTopicData = [
       'HTML comments, like with other languages, are used to provide additional information about the code. They are not rendered by the browser, and are only visible to the developer who reads the code.',
   },
   {
-    topic: 'HTML entities',
+    topic: 'HTML Entities',
     brief:
       "Entities are used to convey unusual or complex characters that might not be available on a standard keyboard. They're also used to display reserved characters that would otherwise be interpreted as code.",
   },
@@ -55,7 +55,7 @@ export const htmlTopicData = [
       'HTML Layout works closely with CSS to provide responsive, dynamic layouts for websites. To get exactly the look you want, you need to consider container elements, positioning, and the box model, and how these might behave when considered contextually.',
   },
   {
-    topic: 'Responsive design',
+    topic: 'Responsive Design',
     brief:
       'Responsive web design starts with HTML, and requires a thorough understanding of how HTML elements behave in different contexts. Knowing how containers will position, size, and scale themselves starts with a solid understanding of hyper-text markup conventions.',
   },
@@ -78,77 +78,77 @@ export const htmlTopicData = [
 
 export const cssTopicData = [
   {
-    topic: 'CSS selectors (element, class, ID)',
+    topic: 'Selectors',
     brief:
-      'CSS selectors are patterns used to select and style HTML elements. They can be based on element names, class names prefixed with a dot (.), or IDs prefixed with a hash (#).',
+      'CSS selectors are used to select and style HTML elements. They can be based on element names, class names, IDs, attributes, and more.',
   },
   {
-    topic: 'CSS box model (margin, border, padding)',
+    topic: 'Box Model',
     brief:
-      'The CSS box model describes the layout of elements, with the content at the center surrounded by padding, border, and margin layers. Each layer affects the final size and position of the element on the page.',
+      'The CSS box model defines the default layout of HTML elements. It consists of content, padding, borders, and margins. These properties collectively determine the size, shape and spacing of an element by manipulating the space inside and around it.',
   },
   {
-    topic: 'CSS display property (block, inline, inline-block)',
+    topic: 'Display Property',
     brief:
-      "The display property determines how an element is displayed. 'block' elements take up the full width, 'inline' elements only take up as much width as necessary, and 'inline-block' elements are inline but respect box-sizing properties.",
+      'The display property determines how an element is displayed, respective to other elements. Manipulation of the display property allows us to do things like alter the flow of content, displaying elements relative to others, or explicitly setting the position of an element on the page.',
   },
   {
-    topic: 'CSS positioning (static, relative, absolute, fixed)',
+    topic: 'Positioning',
     brief:
-      "CSS positioning controls how and where elements are placed. 'static' is the default, 'relative' is positioned relative to its normal position, 'absolute' is positioned relative to the nearest non-static parent, and 'fixed' is positioned relative to the viewport.",
+      'Positioning in CSS allows you to control the layout of elements relative to other elements. Altering this allows us to do things like set the position of an element relative to its parent, or relative to the viewport. We can also stack elements according to rules we set corresponding to the display option.',
   },
   {
-    topic: 'CSS floats and clears',
+    topic: 'CSS Floats and Clears',
     brief:
-      "Floats allow elements to be pushed left or right, making content flow around them. The 'clear' property can be used to control the flow of content after floating elements.",
+      'Floats and clears can be used to manipulate the way elements sit on a markup. Floats allow us to move elements to the left or right of their parent container, while clears allow us to move elements below floated elements.',
   },
   {
-    topic: 'CSS typography (font-family, font-size, font-weight)',
+    topic: 'Typography',
     brief:
       "CSS typography properties control the appearance of text. 'font-family' sets the font, 'font-size' sets the size, and 'font-weight' controls the thickness of characters.",
   },
   {
-    topic: 'CSS color and background properties',
+    topic: 'Color and Background',
     brief:
       "CSS provides properties to set colors and backgrounds. 'color' sets the text color, while 'background-color' sets the background color. Images and gradients can also be set as backgrounds.",
   },
   {
-    topic: 'CSS gradients',
+    topic: 'Gradient',
     brief:
       'CSS gradients allow you to display a smooth transition between multiple colors. They can be linear or radial.',
   },
   {
-    topic: 'CSS transitions and animations',
+    topic: 'Transitions and Animations',
     brief:
       'CSS transitions allow smooth changes of property values. CSS animations can be used to create complex, multi-step animations using keyframes.',
   },
   {
-    topic: 'CSS flexbox layout',
+    topic: 'Flexbox Layout',
     brief:
       'Flexbox is a modern layout model that provides an efficient way to design complex layout structures with a cleaner tool and more predictable results.',
   },
   {
-    topic: 'CSS grid layout',
+    topic: 'Grid Layout',
     brief:
       'CSS Grid layout is a two-dimensional layout system for the web, offering a way to design complex responsive layouts with ease.',
   },
   {
-    topic: 'Responsive design with media queries',
+    topic: 'Media Queries',
     brief:
       'Media queries allow styles to be applied based on the device characteristics, like its width, height, or orientation. This is foundational for creating responsive designs.',
   },
   {
-    topic: 'CSS preprocessors (Sass, Less)',
+    topic: 'CSS Preprocessors',
     brief:
       'Preprocessors like Sass and Less enhance CSS with features like variables, nested rules, and functions. They need to be compiled to regular CSS to work in browsers.',
   },
   {
-    topic: 'CSS frameworks (Bootstrap, Materialize)',
+    topic: 'CSS Frameworks',
     brief:
       'CSS frameworks provide pre-written CSS rules to aid in the rapid development of websites. Bootstrap and Materialize are popular frameworks that include grid systems, components, and utilities.',
   },
   {
-    topic: 'Web accessibility (WCAG 2.0 guidelines)',
+    topic: 'CSS Accessibility',
     brief:
       'Web accessibility ensures websites and apps are usable by people with disabilities. WCAG 2.0 offers guidelines for making web content more accessible to all users.',
   },
@@ -156,77 +156,77 @@ export const cssTopicData = [
 
 export const jsTopicData = [
   {
-    topic: 'JavaScript data types (string, number, boolean, object)',
+    topic: 'Data Types',
     brief:
       'JavaScript has several data types including strings (text), numbers (integers or floats), booleans (true or false), and objects (key-value pairs).',
   },
   {
-    topic: 'JavaScript variables (var, let, const)',
+    topic: 'Variables',
     brief:
       "JavaScript uses variables to store values. 'var' is the traditional declaration, 'let' allows block-scoped variable declaration, and 'const' declares block-scoped, read-only variables.",
   },
   {
-    topic: 'JavaScript functions (declaration, expression)',
+    topic: 'Functions',
     brief:
       'Functions in JavaScript are blocks of reusable code. They can be declared or expressed. Function declarations are hoisted, whereas function expressions are not.',
   },
   {
-    topic: 'JavaScript arrays',
+    topic: 'Arrays',
     brief:
       'Arrays in JavaScript are ordered lists of values. They can store multiple values and can be accessed by their index.',
   },
   {
-    topic: 'JavaScript objects',
+    topic: 'Objects',
     brief:
       'Objects in JavaScript are collections of key-value pairs. They can contain multiple data types and can be nested.',
   },
   {
-    topic: 'JavaScript loops (for, while)',
+    topic: 'Loops',
     brief:
       "Loops are used to execute the same block of code multiple times. Common types of loops include 'for' and 'while'.",
   },
   {
-    topic: 'JavaScript conditional statements (if/else, switch/case)',
+    topic: 'Conditional Statements',
     brief:
       "Conditional statements allow code to be executed based on whether a condition is true or false. 'if/else' and 'switch/case' are the primary conditional structures in JavaScript.",
   },
   {
-    topic: 'JavaScript DOM manipulation',
+    topic: 'DOM Manipulation',
     brief:
       'The Document Object Model (DOM) represents the structure of an HTML document. JavaScript can be used to manipulate the DOM, changing content, structure, or styles dynamically.',
   },
   {
-    topic: 'Vue.js components',
+    topic: 'Vue.js Components',
     brief:
       'In Vue.js, components are reusable chunks of code that encapsulate a template, logic, and styles for a UI piece. Components can be nested and reused across projects.',
   },
   {
-    topic: 'Vue.js directives',
+    topic: 'Vue.js Directives',
     brief:
       'Vue.js directives are prefixed tokens in templates that provide special reactive behavior. For example, `v-if`, `v-for`, and `v-bind`.',
   },
   {
-    topic: 'Vue.js computed properties',
+    topic: 'Vue.js Computed Properties',
     brief:
       'Computed properties are reactive properties in Vue.js that are based on other properties. They update automatically when their dependencies change.',
   },
   {
-    topic: 'Vue.js lifecycle hooks',
+    topic: 'Vue.js Lifecycle Hooks',
     brief:
       'Lifecycle hooks in Vue.js are special methods that automatically get called as your component achieves certain milestones in its lifecycle, like creation, mounting, updating, and destruction.',
   },
   {
-    topic: 'Vue.js event handling',
+    topic: 'Vue.js Event-handling',
     brief:
       "Vue provides a `v-on` directive to listen to DOM events and execute JavaScript when they're triggered.",
   },
   {
-    topic: 'Vue.js routing',
+    topic: 'Vue.js Routing',
     brief:
       'Vue Router is the official router for Vue.js. It allows for the creation of Single Page Applications with navigation, nested routes, and more.',
   },
   {
-    topic: 'Vue.js state management (Vuex)',
+    topic: 'Vue.js State Management (Vuex)',
     brief:
       'Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all components in an application.',
   },
