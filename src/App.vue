@@ -32,7 +32,7 @@ export default {
       sans-serif;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scrollbar-width: thin;
-    scrollbar-color: #6c6c6c #c8c8c8;
+    scrollbar-color: #565656 #aeaeae;
   }
 
   #app {
@@ -68,28 +68,30 @@ export default {
     border: none;
     background: none;
     cursor: pointer;
-    min-height: 3vh;
+    min-height: 3rem;
+    min-width: 6.5rem;
     background-color: rgb(93, 94, 182);
     color: white;
     font-weight: bold;
   }
 
   button:hover {
-    background-color: #c37ee0;
+    background-color: #c37ee0df;
     transform: scale(1.1);
     border-radius: 2rem;
     transition: all 0.2s ease-in-out;
   }
 
-  p, li {
-    font-size: max(1rem, 8pt);
-  }
-
   h1 {
-    font-size: max(1.2rem, 11pt);
+    font-size: max(2.5rem, 12pt);
   }
 
   h2 {
-    font-size: max(1rem, 8pt);
+    font-size: max(2rem, 10pt);
   }
+
+  p, h3, code, button, article, li {
+    font-size: max(1rem, 10pt);
+  }
+
 </style>

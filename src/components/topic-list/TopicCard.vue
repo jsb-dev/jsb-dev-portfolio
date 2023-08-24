@@ -1,8 +1,8 @@
 <template>
   <li>
     <div :class="cardClass">
-      <div class="h2-container">
-        <h2 class="card-title">{{ topic }}</h2>
+      <div class="h3-container">
+        <h3 class="card-title">{{ topic }}</h3>
       </div>
       <div class="card-btn-container">
         <button class="card-btn" @click="openModal">Read</button>
@@ -15,7 +15,7 @@
           <article>
             {{ brief }}
           </article>
-          <button @click="closeModal">Close</button>
+          <button @click="closeModal" id="close-btn">Close</button>
         </div>
       </div>
     </transition>
@@ -117,6 +117,7 @@ export default {
   transition: all 0.3s ease;
   font-weight: 700;
   padding: 0.5rem 1rem;
+  margin: .8rem 0;
 }
 
 .modal-overlay {
@@ -135,11 +136,23 @@ export default {
 
 .modal {
   background: white;
-  padding: 2rem;
+  padding: 3rem;
   box-shadow: 0 .5rem 2rem .5rem rgba(0, 0, 0, 0.3);
+  background-color: #d4d4d4;
   z-index: 3;
-  width: 30rem;
-  height: 20rem;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#close-btn {
+  margin-top: 2rem;
+}
+
+article {
+  text-align: center;
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -150,7 +163,7 @@ export default {
   opacity: 0;
 }
 
-.h2-container, .card-btn-container {
+.h3-container, .card-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,11 +172,11 @@ export default {
   text-align: center;
 }
 
-.card > .h2-container {
+.card > .h3-container {
   padding-left: 1rem;
 }
 
-.card-vertical > .h2-container {
+.card-vertical > .h3-container {
   padding-left: 0;
 }
 

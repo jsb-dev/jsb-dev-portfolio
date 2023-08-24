@@ -11,8 +11,8 @@
 .circle-container {
   list-style-type: none;
   position: relative;
-  bottom: 15vh;
-  right: 20vw;
+  bottom: 13vh;
+  right: 36vw;
   padding: 0;
   margin: 0;
   border-radius: 50%;

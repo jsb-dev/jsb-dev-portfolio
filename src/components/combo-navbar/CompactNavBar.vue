@@ -56,16 +56,24 @@ export default {
 
 #close-btn {
   position: fixed;
-  bottom: 15vh;
-  left: 9vw;
+  bottom: 5vh;
+  right: 10vw;
   z-index: 1005;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 2.5rem;
+  opacity: .8;
   transition: all .1s ease-in-out;
-  width: 7rem;
-  height: 7rem;
 }
 
 #open-btn {
-  box-shadow: 0 .5rem 7rem 1rem rgba(0, 0, 0, .7), 0 .5rem 1.2rem 1.2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 .5rem 7rem 1rem rgba(0, 0, 0, .7), 0 .5rem 1.8rem 1.5rem rgba(0, 0, 0, 0.5);
+
+}
+
+#close-btn {
+  opacity: 1;
+  transition: all .3s ease-in-out;
 }
 
 .modal {

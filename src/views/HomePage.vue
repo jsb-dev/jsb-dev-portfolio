@@ -64,7 +64,7 @@ setup() {
         ...baseStyles,
         flexWrap: 'none',
         flexDirection: 'row',
-        marginTop: '6vh',
+        marginTop: '8vh',
       };
     } else {
       return {

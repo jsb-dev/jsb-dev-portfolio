@@ -1,91 +1,146 @@
 <template>
-    <div class="css-page">
-      <h1>CSS Responsive Design</h1>
-      
-      <!-- Responsive Design Features Section -->
+    <div id="css-page">
+      <div :style="{ height: mainContainerHeight }" id="main-container">  
+      <h1>CSS Topics</h1>
+      <!-- CSS Basics Section -->
       <section>
-        <h2>Responsive Design Features</h2>
+        <h2>CSS Basics</h2>
         <ul>
-          <li>Fluid Layouts: Using percentages instead of fixed units.</li>
-          <li>Flexible Images: Scaling images to save bandwidth and fit their containing elements.</li>
-          <li>Media Queries: Applying styles based on device characteristics.</li>
-          <li>Viewport: Setting the viewport to scale and control the layout on all browsing devices.</li>
-          <li>Responsive Typography: Adjusting font sizes based on the viewing environment.</li>
+          <li>{{ cssTopicData[0].brief }}</li>
+          <li>{{ cssTopicData[1].brief }}</li>
+          <li>{{ cssTopicData[2].brief }}</li>
+          <li>{{ cssTopicData[3].brief }}</li>
+          <li>{{ cssTopicData[4].brief }}</li>
         </ul>
       </section>
-      
-      <!-- Media Queries Section -->
+      <!-- CSS Typography and Colors Section -->
       <section>
-        <h2>Media Queries</h2>
-        <p>
-          Media queries enable the conditional application of styles based on the device characteristics, such as its width, height, orientation, or even resolution.
-        </p>
+        <h2>Typography and Colors</h2>
+        <p>{{ cssTopicData[5].brief }}</p>
+        <p>{{ cssTopicData[6].brief }}</p>
         <code>
-          @media only screen and (max-width: 600px) {
-            body {
-              background-color: lightblue;
-            }
-          }
+          color: red;
+          background-color: #f5f5f5;
         </code>
+        <p>{{ cssTopicData[7].brief }}</p>
       </section>
-      
-      <!-- Responsive Layouts Section -->
+      <!-- CSS Transitions, Flexbox, and Grid Section -->
       <section>
-        <h2>Responsive Layouts</h2>
-  
-        <!-- Grid -->
-        <h3>Grid</h3>
-        <p>
-          CSS Grid layout allows for creating complex responsive designs with a clean and concise syntax.
-        </p>
-        <code>
-          .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          }
-        </code>
-  
+        <h2>Advanced Styling</h2>
+        <p>{{ cssTopicData[8].brief }}</p>
         <!-- Flexbox -->
-        <h3>Flexbox</h3>
-        <p>
-          Flexbox is a layout model that allows items in a container to be dynamically arranged depending on screen size.
-        </p>
+        <h3>CSS Flexbox Layout</h3>
+        <p>{{ cssTopicData[9].brief }}</p>
         <code>
           .flex-container {
             display: flex;
             flex-wrap: wrap;
           }
         </code>
+        <!-- Grid -->
+        <h3>CSS Grid Layout</h3>
+        <p>{{ cssTopicData[10].brief }}</p>
+        <code>
+          .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          }
+        </code>
+      </section>
+      <!-- Responsive Design, Preprocessors, and Frameworks Section -->
+      <section>
+        <h2>Extensions and Tools</h2>
+        <p>{{ cssTopicData[11].brief }}</p>
+        <p>{{ cssTopicData[12].brief }}</p>
+        <p>{{ cssTopicData[13].brief }}</p>
+      </section>
+      <!-- Web Accessibility Section -->
+      <section>
+        <h2>Web Accessibility</h2>
+        <p>{{ cssTopicData[14].brief }}</p>
       </section>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'CSSPage'
+  </div>
+</template>
+
+<script>
+import { cssTopicData } from '../data/topic-data.js';
+import { mapState } from 'vuex';
+
+export default {
+  name: 'CSSPage',
+  data() {
+    return {
+      cssTopicData
+    };
+  },
+  computed: {
+    ...mapState(['viewportIsVertical']),
+    mainContainerHeight() {
+      return this.viewportIsVertical ? '96vh' : '82vh';
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.$store.dispatch.bind(this, 'updateLayout'));
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.$store.dispatch.bind(this, 'updateLayout'));
   }
-  </script>
-  
-  <style scoped>
-  .css-page {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  h1, h2, h3 {
-    color: #333;
-  }
-  
-  ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  
-  code {
-    background-color: #f5f5f5;
-    padding: 5px 10px;
-    display: block;
-    margin: 10px 0;
-  }
-  </style>
-  
+}
+</script>
+
+<style scoped>
+#css-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-container {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  width: 94vw;
+  height: 82vh;
+  overflow-Y: scroll;
+  background-color: #d4d4d4;
+  box-shadow: 0 1.5rem 1rem 1rem rgba(0, 0, 0, 1)
+}
+
+h1 {
+  color: #131313;
+}
+
+h2 {
+  color: #2f2f2f;
+}
+
+h3 {
+  color: #484848;
+}
+
+ul {
+  margin: 1rem 0 0 2rem;
+}
+
+p, code {
+  margin: 1.3rem 0;
+}
+
+section {
+  padding: 1rem 2rem;
+}
+
+code {
+  background-color: #f5f5f5;
+  font-family: monospace;
+  padding: 1rem 2rem;
+  display: block;
+}
+
+ul {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+}
+</style>
