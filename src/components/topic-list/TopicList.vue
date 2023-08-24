@@ -1,9 +1,11 @@
 <template>
-  <div :class="{ 'vertical-container': viewportIsVertical, 'horizontal-container': !viewportIsVertical }">
-    <ul :class="{ 'vertical-list': viewportIsVertical, 'horizontal-list': !viewportIsVertical }">
-      <TopicCard v-for="topic in topicData" :key="topic.id" :topic="topic.topic" :brief="topic.brief" />
-    </ul>
-  </div>
+  <section>
+    <div :class="{ 'vertical-container': viewportIsVertical, 'horizontal-container': !viewportIsVertical }">
+      <ul :class="{ 'vertical-list': viewportIsVertical, 'horizontal-list': !viewportIsVertical }">
+        <TopicCard v-for="topic in topicData" :key="topic.id" :topic="topic.topic" :brief="topic.brief" />
+      </ul>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -43,13 +45,13 @@ export default {
 }
 
 .vertical-container {
-  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow-x: hidden;
   height: 92vh;
   width: 30vw;
 }
 
 .horizontal-container {
-  overflow-y: hidden; /* Prevents vertical scrolling */
+  overflow-y: hidden;
   width: 92vw;
 }
 
@@ -57,7 +59,8 @@ ul {
   display: flex;
   list-style: none;
   padding: 0;
-  min-width: 150vw;
+  min-width: fit-content;
   overflow: hidden;
 }
+
 </style>

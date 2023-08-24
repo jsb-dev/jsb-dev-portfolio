@@ -1,18 +1,17 @@
 <template>
   <div id="home-page">
-    <section :style="listsContainerStyles" id="lists-container">
-      <section>
-        <TopicList :topicData="htmlTopicData" />
-      </section>
+      <section :style="listsContainerStyles" id="lists-container">
+        <section>
+          <TopicList :topicData="htmlTopicData" />
+        </section>
       
-      <section>
-        <TopicList :topicData="cssTopicData" />
+        <section>
+          <TopicList :topicData="cssTopicData" />
+        </section>
+        <section>
+          <TopicList :topicData="jsTopicData" />
+        </section>
       </section>
-
-      <section>
-        <TopicList :topicData="jsTopicData" />
-      </section>
-    </section>
   </div>
 </template>
 
@@ -57,12 +56,15 @@ setup() {
       flexWrap: 'wrap',
       flexDirection: 'row',
       justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '92vw',
     };
     if (store.state.viewportIsVertical && store.state.viewportIsPortable) {
       return {
         ...baseStyles,
         flexWrap: 'none',
         flexDirection: 'row',
+        marginTop: '6vh',
       };
     } else {
       return {
@@ -86,7 +88,9 @@ setup() {
 
 #home-page {
   width: 100vw;
-  height: 100vh;
-  overflow: scroll;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

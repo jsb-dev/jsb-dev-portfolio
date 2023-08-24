@@ -73,13 +73,15 @@ export default {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: inset 0 0 1rem .1rem rgba(0, 0, 0, 0.3), 0 .5rem 1rem .5rem rgba(0, 0, 0, 0.1);
-  min-height: 80px;
+  min-height: 15vh;
   min-width: min(25rem, 24vw);
   position: relative;
   margin: 1.5rem;
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  background-color: #d4d4d4;
 }
 
 .card-vertical {
@@ -87,7 +89,9 @@ export default {
   align-items: start;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100px;
+  width: 5rem;
+  height: 25rem;
+  padding: 1rem;
 }
 
 .card:hover {
@@ -107,18 +111,12 @@ export default {
 }
 
 .card-btn {
-  background-color: #567ea4;
   color: #fff;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 700;
   padding: 0.5rem 1rem;
-}
-
-.card-btn:hover {
-  background-color: #6f5c90;
-  transform: scale(1.1);
 }
 
 .modal-overlay {
@@ -153,11 +151,20 @@ export default {
 }
 
 .h2-container, .card-btn-container {
-  padding-left: 3.5rem;
-  width: 50%;
-  height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.card > .h2-container {
+  padding-left: 1rem;
+}
+
+.card-vertical > .h2-container {
+  padding-left: 0;
 }
 
 </style>

@@ -26,10 +26,13 @@ export default {
     padding: 0;
     box-sizing: border-box;
     border-radius: 0.5rem;
+    border: none;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
       sans-serif;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #6c6c6c #c8c8c8;
   }
 
   #app {
@@ -37,7 +40,7 @@ export default {
     height: 100vh;
     overflow: hidden;
     border-radius: 0;
-    border-radius: 2rem; 
+    background-color: #282828;
   }
 
 ::-webkit-scrollbar {
@@ -61,19 +64,21 @@ export default {
   border-radius: 2rem;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #3b3a3a #aeaeae;
-}
-
-
   button {
     border: none;
     background: none;
     cursor: pointer;
-    min-width: 50px;
-    min-height: 20px;
-    font-size: max(1rem, 8pt);
+    min-height: 3vh;
+    background-color: rgb(93, 94, 182);
+    color: white;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #c37ee0;
+    transform: scale(1.1);
+    border-radius: 2rem;
+    transition: all 0.2s ease-in-out;
   }
 
   p, li {

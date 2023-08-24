@@ -1,6 +1,6 @@
 <template>
     <div>
-      <CompactNavBar v-if="viewportIsVertical && viewportIsPortable" />
+      <CompactNavBar v-if="viewportIsVertical || viewportIsPortable" />
       <FullNavBar v-else />
     </div>
   </template>

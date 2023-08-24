@@ -1,7 +1,7 @@
 <template>
     <div>
       <HoriNavList v-if="!viewportIsVertical && !viewportIsPortable" />
-      <VertNavList v-else />
+      <CircleNavList v-else />
     </div>
   </template>
   
@@ -9,12 +9,12 @@
   import { computed } from 'vue';
   import { useStore } from 'vuex';
   import HoriNavList from './HoriNavList.vue';
-  import VertNavList from './VertNavList.vue';
+  import CircleNavList from './CircleNavList.vue';
   
   export default {
     components: {
       HoriNavList,
-      VertNavList
+      CircleNavList
     },
     setup() {
       const store = useStore();
