@@ -1,17 +1,25 @@
 <template>
     <ul class="horizontal-list">
-      <li><button class="nav-button">
-        <router-link to="/" class="nav-link">Home</router-link>
-      </button></li>
-      <li><button class="nav-button">
-        <router-link to="/info/html" class="nav-link">HTML</router-link>
-      </button></li>
-      <li><button class="nav-button">
-        <router-link to="/info/css" class="nav-link">CSS</router-link>
-      </button></li>
-      <li><button class="nav-button">
-        <router-link to="/info/js" class="nav-link">JS</router-link>
-      </button></li>
+      <li>
+        <router-link to="/" class="nav-link">
+          <button class="nav-button">Home</button>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/info/html" class="nav-link">
+          <button class="nav-button">HTML</button>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/info/css" class="nav-link">
+          <button class="nav-button">CSS</button>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/info/js" class="nav-link">
+          <button class="nav-button">JS</button>
+        </router-link>
+      </li>
     </ul>
   </template>
   
@@ -34,7 +42,6 @@
 
   .nav-button {
     color: #fff;
-    font-size: min(1.8rem, 12pt);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2rem;

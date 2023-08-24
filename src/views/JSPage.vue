@@ -4,7 +4,7 @@
         <h1>JavaScript Topics</h1>
   
         <section v-for="(topic, index) in jsTopicData" :key="index">
-          <h2>{{ topic.topic }}</h2>
+          <h3>{{ topic.topic }}</h3>
           <p>{{ topic.brief }}</p>
           <code v-if="topic.code">{{ topic.code }}</code>
         </section>

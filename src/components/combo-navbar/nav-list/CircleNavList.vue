@@ -1,9 +1,25 @@
 <template>
   <ul class="circle-container">
-    <li><router-link to="/" class="nav-link">Home</router-link></li>
-    <li><router-link to="/info/html" class="nav-link">HTML</router-link></li>
-    <li><router-link to="/info/css" class="nav-link">CSS</router-link></li>
-    <li><router-link to="/info/js" class="nav-link">JS</router-link></li>
+    <li>
+      <router-link to="/" class="nav-link">
+        <button class="nav-button">Home</button>
+      </router-link>
+    </li>
+    <li>
+      <router-link to="/info/html" class="nav-link">
+        <button class="nav-button">HTML</button>
+      </router-link>
+    </li>
+    <li>
+      <router-link to="/info/css" class="nav-link">
+        <button class="nav-button">CSS</button>
+      </router-link>
+    </li>
+    <li>
+      <router-link to="/info/js" class="nav-link">
+        <button class="nav-button">JS</button>
+      </router-link>
+    </li>
   </ul>
 </template>
 
@@ -62,6 +78,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(var(--text-rotate, 0deg));
+  background-color: #c37ee0;
+  cursor: pointer;
+}
+
+.nav-button {
   background-color: #c37ee0;
 }
 

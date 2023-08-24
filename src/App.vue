@@ -32,7 +32,7 @@ export default {
       sans-serif;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scrollbar-width: thin;
-    scrollbar-color: #565656 #aeaeae;
+    scrollbar-color: #565656 #dcdcdc;
   }
 
   #app {
@@ -72,7 +72,6 @@ export default {
     min-width: 6.5rem;
     background-color: rgb(93, 94, 182);
     color: white;
-    font-weight: bold;
   }
 
   button:hover {
@@ -87,7 +86,7 @@ export default {
   }
 
   h2 {
-    font-size: max(2rem, 10pt);
+    font-size: max(2rem, 11pt);
   }
 
   p, h3, code, button, article, li {

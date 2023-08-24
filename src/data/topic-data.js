@@ -1,78 +1,78 @@
 export const htmlTopicData = [
   {
-    topic: 'HTML5 semantic tags',
+    topic: 'HTML5 semantics',
     brief:
-      'HTML5 introduced a set of new semantic elements that convey the meaning of the content within them. Examples include <article>, <aside>, <details>, <figcaption>, <figure>, <footer>, <header>, <main>, <mark>, <nav>, <section>, <summary>, and <time>.',
+      'HTML5 introduced a variety of different tags that can be used to semantically structure a website. This allows for better accessibility and SEO by providing web browsers with as much detailed, meaningful information as possible.',
   },
   {
-    topic: 'HTML forms',
+    topic: 'Forms',
     brief:
-      'HTML forms are used to collect user input. They can contain various types of input elements like text fields, checkboxes, radio-buttons, submit buttons, and more. The <form> tag is used to create an HTML form.',
+      'HTML forms are used to collect user input. They are one of the main points of interaction a user has to provide information to a web server.',
   },
   {
-    topic: 'HTML tables',
+    topic: 'Tables',
     brief:
-      'HTML tables are used to display data in tabular form (row * column). They are created using the <table> element, with rows represented by <tr> tags, headers by <th> tags, and standard data cells by <td> tags.',
+      "Tables are used to display data in a tabular format. They're one of the most common ways to display data in an organised manner. Previously, tables were also used as a means of laying out a page, but this is no longer recommended.",
   },
   {
-    topic: 'HTML images',
+    topic: 'Images',
     brief:
-      "HTML images are displayed using the <img> tag. The 'src' attribute specifies the path to the image to be displayed, and the 'alt' attribute provides an alternative text for the image, which is useful for accessibility.",
+      "Images are one of the most common assets used in HTML markups to provide additional information to the user. They're also used to make a page more visually appealing, while providing detailed alt text for screen readers.",
   },
   {
-    topic: 'HTML links',
+    topic: 'Links',
     brief:
-      "HTML links, or hyperlinks, allow users to navigate from one web page to another. They are created using the <a> tag, with the 'href' attribute specifying the destination URL.",
+      'HTML links, or hyperlinks, allow users to navigate from one web page to another. They can also be used to take someone to a seperate website, a specific part of the website, images for accreditation, and much more.',
   },
   {
     topic: 'HTML lists',
     brief:
-      'HTML supports ordered (<ol>), unordered (<ul>), and description (<dl>) lists. Ordered lists use numbers, unordered lists use bullets, and description lists have a title and description.',
+      "Lists come with all the formatting options you might expect if you're familiar with rich text editors. They are also commonly used in iterative loops to display data from a collection.",
   },
   {
-    topic: 'HTML headings and paragraphs',
+    topic: 'Headings and paragraphs',
     brief:
-      'HTML headings are defined with the <h1> through <h6> tags, with <h1> being the highest level. Paragraphs are defined using the <p> tag.',
+      'HTML headings are defined at six different levels with default styling and behaviour. Paragraphs serve as the most generic way to display text content on a page.',
   },
   {
     topic: 'HTML attributes',
     brief:
-      'HTML attributes provide additional information about an element. They are always specified in the opening tag and usually come in name/value pairs like name="value".',
+      'Attributes, or properties, are used to outline specific configurations for certain elements. They can be used to provide additional information about an element, or to configure its behaviour and appearance.',
   },
   {
-    topic: 'HTML comments',
+    topic: 'Comments',
     brief:
-      'HTML comments are not displayed in the browser but can be used to add explanatory notes to the code or to prevent the browser from executing specific parts of the code. Comments are wrapped in <!-- and -->.',
+      'HTML comments, like with other languages, are used to provide additional information about the code. They are not rendered by the browser, and are only visible to the developer who reads the code.',
   },
   {
     topic: 'HTML entities',
     brief:
-      "HTML entities are used to display reserved characters or characters that aren't present on the keyboard. Examples include &amp; for &, &lt; for <, &gt; for >, &quot; for \", and &apos; for '.",
+      "Entities are used to convey unusual or complex characters that might not be available on a standard keyboard. They're also used to display reserved characters that would otherwise be interpreted as code.",
   },
   {
-    topic: 'HTML layout techniques (floats, positioning)',
+    topic: 'Layout',
     brief:
-      "Floats allow elements to be pushed to the left or right, causing surrounding content to wrap around them. Positioning can be used to control the placement of elements using properties like 'static', 'relative', 'absolute', 'fixed', and 'sticky'.",
+      'HTML Layout works closely with CSS to provide responsive, dynamic layouts for websites. To get exactly the look you want, you need to consider container elements, positioning, and the box model, and how these might behave when considered contextually.',
   },
   {
-    topic: 'HTML responsive design',
+    topic: 'Responsive design',
     brief:
-      "Responsive design ensures web pages look good on all devices by automatically adjusting the layout based on the device's screen size. Techniques include fluid grids, flexible images, and media queries.",
+      'Responsive web design starts with HTML, and requires a thorough understanding of how HTML elements behave in different contexts. Knowing how containers will position, size, and scale themselves starts with a solid understanding of hyper-text markup conventions.',
   },
   {
-    topic: 'HTML accessibility (ARIA roles and attributes)',
+    topic: 'HTML Accessibility',
     brief:
-      'Accessibility ensures web content is usable by everyone, including people with disabilities. ARIA (Accessible Rich Internet Applications) roles and attributes provide ways to make web content and web apps more accessible to people with disabilities.',
+      'Accessibility ensures web content is usable by everyone, including people with disabilities. There are plenty of ways to enrch accessibility through HTML, including semantic markup, alt text, and ARIA attributes.',
   },
   {
-    topic: 'HTML validation (W3C validation service)',
+    topic: 'HTML Validation',
     brief:
-      'Validation is the process of checking if the HTML code of a web page is correct. The W3C validation service is a free online tool provided by the World Wide Web Consortium (W3C) to validate web documents in formats like HTML and XHTML.',
+      'Validation is the process of checking if the HTML code of a web page is correct. There are multiple resources available to validate HTML, including the W3C Markup Validation Service, and the Nu HTML Checker. Tools like these contribute to the design, functionality and semantic accuracy of a web page.',
   },
   {
-    topic: 'HTML5 APIs (Canvas, Geolocation)',
+    topic: 'HTML5 APIs',
     brief:
-      "HTML5 introduced several new APIs for creating more interactive and feature-rich web applications. Canvas allows for dynamic rendering of graphics, and Geolocation allows a user's location to be shared with a web application.",
+      'HTML5 provides access to a variety of APIs which enrich the web development experience. These APIs include the Geolocation API, the Drag and Drop API, the Web Storage API, and many more. All have specific use cases, and are paramount to the functionality we expect from modern web applications.',
   },
 ];
 

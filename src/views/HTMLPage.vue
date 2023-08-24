@@ -1,17 +1,17 @@
 <template>
     <div class="html-page">
       <div :style="{ height: mainContainerHeight }" class="main-container">
-        <h1>HTML Topics</h1>
+        <h1>HTML Fundamentals</h1>
   
         <!-- HTML5 Semantics Section -->
         <section>
-          <h2>{{ htmlTopicData[0].topic }}</h2>
+          <h3>{{ htmlTopicData[0].topic }}</h3>
           <p>{{ htmlTopicData[0].brief }}</p>
         </section>
   
         <!-- HTML Forms Section -->
         <section>
-          <h2>{{ htmlTopicData[1].topic }}</h2>
+          <h3>{{ htmlTopicData[1].topic }}</h3>
           <p>{{ htmlTopicData[1].brief }}</p>
           <code>
             &lt;form action="/submit" method="post"&gt;
@@ -23,7 +23,7 @@
   
         <!-- HTML Tables Section -->
         <section>
-          <h2>{{ htmlTopicData[2].topic }}</h2>
+          <h3>{{ htmlTopicData[2].topic }}</h3>
           <p>{{ htmlTopicData[2].brief }}</p>
           <code>
             &lt;table&gt;
@@ -93,6 +93,7 @@
   
   h1 {
     color: #131313;
+    margin-bottom: 1rem;
   }
   
   h2 {

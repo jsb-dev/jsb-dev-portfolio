@@ -2,13 +2,17 @@
   <div id="home-page">
       <section :style="listsContainerStyles" id="lists-container">
         <section>
+          <h3>HTML</h3>
           <TopicList :topicData="htmlTopicData" />
         </section>
       
         <section>
+          <h3>CSS</h3>
           <TopicList :topicData="cssTopicData" />
         </section>
+
         <section>
+          <h3>JavaScript</h3>
           <TopicList :topicData="jsTopicData" />
         </section>
       </section>
@@ -88,9 +92,13 @@ setup() {
 
 #home-page {
   width: 100vw;
-  height: 90vh;
+  height: 88vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+h3 {
+  padding: 1rem 0 0 1.5rem;
+  color: white;
 }
 </style>
