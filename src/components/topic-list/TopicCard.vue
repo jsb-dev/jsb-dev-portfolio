@@ -85,8 +85,7 @@ export default {
 }
 
 .card-vertical {
-  display: flex;
-  align-items: start;
+  display: flex-start;
   flex-direction: column;
   justify-content: space-evenly;
   width: 5rem;
