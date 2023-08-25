@@ -1,8 +1,8 @@
 <template>
     <div id="css-page">
       <div :style="{ height: mainContainerHeight }" id="main-container">  
-      <h1>CSS Topics</h1>
-      <!-- CSS Basics Section -->
+      <h1>CSS Concepts</h1>
+
       <section>
         <h2>CSS Basics</h2>
         <ul>
@@ -13,7 +13,7 @@
           <li>{{ cssTopicData[4].brief }}</li>
         </ul>
       </section>
-      <!-- CSS Typography and Colors Section -->
+
       <section>
         <h2>Typography and Colors</h2>
         <p>{{ cssTopicData[5].brief }}</p>
@@ -24,11 +24,11 @@
         </code>
         <p>{{ cssTopicData[7].brief }}</p>
       </section>
-      <!-- CSS Transitions, Flexbox, and Grid Section -->
+
       <section>
         <h2>Advanced Styling</h2>
         <p>{{ cssTopicData[8].brief }}</p>
-        <!-- Flexbox -->
+
         <h3>CSS Flexbox Layout</h3>
         <p>{{ cssTopicData[9].brief }}</p>
         <code>
@@ -37,7 +37,7 @@
             flex-wrap: wrap;
           }
         </code>
-        <!-- Grid -->
+
         <h3>CSS Grid Layout</h3>
         <p>{{ cssTopicData[10].brief }}</p>
         <code>
@@ -47,14 +47,14 @@
           }
         </code>
       </section>
-      <!-- Responsive Design, Preprocessors, and Frameworks Section -->
+
       <section>
         <h2>Extensions and Tools</h2>
         <p>{{ cssTopicData[11].brief }}</p>
         <p>{{ cssTopicData[12].brief }}</p>
         <p>{{ cssTopicData[13].brief }}</p>
       </section>
-      <!-- Web Accessibility Section -->
+
       <section>
         <h2>Web Accessibility</h2>
         <p>{{ cssTopicData[14].brief }}</p>

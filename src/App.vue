@@ -7,6 +7,7 @@
 
 <script>
 import ComboNavBar from './components/combo-navbar/ComboNavBar.vue';
+import './App.css'
 
 export default {
   name: 'App',
@@ -42,55 +43,4 @@ export default {
     border-radius: 0;
     background-color: #282828;
   }
-
-::-webkit-scrollbar {
-  width: 10px; 
-  height: 10px; 
-  border-radius: 2rem;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 2rem; 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888; 
-  border-radius: 2rem; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-  border-radius: 2rem;
-}
-
-  button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    min-height: 3rem;
-    min-width: 6.5rem;
-    background-color: rgb(93, 94, 182);
-    color: white;
-  }
-
-  button:hover {
-    background-color: #c37ee0df;
-    transform: scale(1.1);
-    border-radius: 2rem;
-    transition: all 0.2s ease-in-out;
-  }
-
-  h1 {
-    font-size: max(2.5rem, 12pt);
-  }
-
-  h2 {
-    font-size: max(2rem, 11pt);
-  }
-
-  p, h3, code, button, article, li {
-    font-size: max(1rem, 10pt);
-  }
-
 </style>

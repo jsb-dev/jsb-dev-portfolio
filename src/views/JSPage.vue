@@ -1,7 +1,7 @@
 <template>
     <div class="js-page">
       <div :style="{ height: mainContainerHeight }" class="main-container">
-        <h1>JavaScript Topics</h1>
+        <h1>JavaScript Capabilities</h1>
   
         <section v-for="(topic, index) in jsTopicData" :key="index">
           <h3>{{ topic.topic }}</h3>

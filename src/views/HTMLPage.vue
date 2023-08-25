@@ -3,13 +3,11 @@
       <div :style="{ height: mainContainerHeight }" class="main-container">
         <h1>HTML Fundamentals</h1>
   
-        <!-- HTML5 Semantics Section -->
         <section>
           <h3>{{ htmlTopicData[0].topic }}</h3>
           <p>{{ htmlTopicData[0].brief }}</p>
         </section>
   
-        <!-- HTML Forms Section -->
         <section>
           <h3>{{ htmlTopicData[1].topic }}</h3>
           <p>{{ htmlTopicData[1].brief }}</p>
@@ -21,7 +19,6 @@
           </code>
         </section>
   
-        <!-- HTML Tables Section -->
         <section>
           <h3>{{ htmlTopicData[2].topic }}</h3>
           <p>{{ htmlTopicData[2].brief }}</p>
@@ -39,11 +36,10 @@
           </code>
         </section>
   
-        <!-- Additional Sections for other topics -->
-        <section v-for="(topicData, index) in htmlTopicData.slice(3)" :key="index">
-          <h2>{{ topicData.topic }}</h2>
-          <p>{{ topicData.brief }}</p>
-        </section>
+            <section v-for="(topicData, index) in htmlTopicData.slice(3)" :key="index">
+              <h3>{{ topicData.topic }}</h3>
+              <p>{{ topicData.brief }}</p>
+            </section>
       </div>
     </div>
   </template>
@@ -105,6 +101,7 @@
   }
   
   ul {
+    list-style: none;
     margin: 1rem 0 0 2rem;
     background-color: #f5f5f5;
     display: block;
