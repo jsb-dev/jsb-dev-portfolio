@@ -6,18 +6,18 @@
       </router-link>
     </li>
     <li>
-      <router-link to="/info/html" class="nav-link">
-        <button class="nav-button">HTML</button>
+      <router-link to="/demo" class="nav-link">
+        <button class="nav-button">Demo</button>
       </router-link>
     </li>
     <li>
-      <router-link to="/info/css" class="nav-link">
-        <button class="nav-button">CSS</button>
+      <router-link to="/" class="nav-link">
+        <button class="nav-button"></button>
       </router-link>
     </li>
     <li>
-      <router-link to="/info/js" class="nav-link">
-        <button class="nav-button">JS</button>
+      <router-link to="/" class="nav-link">
+        <button class="nav-button"></button>
       </router-link>
     </li>
   </ul>

@@ -3,6 +3,7 @@ import HomePage from '@/views/HomePage.vue';
 import HTMLPage from '@/views/HTMLPage.vue';
 import CSSPage from '@/views/CSSPage.vue';
 import JSPage from '@/views/JSPage.vue';
+import DemoPage from '@/views/demo-page/DemoPage.vue';
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/info/js',
     name: 'JSPage',
     component: JSPage,
+  },
+  {
+    path: '/demo',
+    name: 'DemoPage',
+    component: DemoPage,
   },
 ];
 

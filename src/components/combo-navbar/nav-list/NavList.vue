@@ -8,8 +8,8 @@
   <script>
   import { computed } from 'vue';
   import { useStore } from 'vuex';
-  import HoriNavList from './HoriNavList.vue';
-  import CircleNavList from './CircleNavList.vue';
+  import HoriNavList from './nav-list-components/HoriNavList.vue';
+  import CircleNavList from './nav-list-components/CircleNavList.vue';
   
   export default {
     components: {
