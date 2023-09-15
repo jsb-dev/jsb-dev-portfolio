@@ -11,13 +11,13 @@
       </router-link>
     </li>
     <li>
-      <router-link to="/" class="nav-link">
-        <button class="nav-button"></button>
+      <router-link to="/portfolio" class="nav-link">
+        <button class="nav-button">Portfolio</button>
       </router-link>
     </li>
     <li>
-      <router-link to="/" class="nav-link">
-        <button class="nav-button"></button>
+      <router-link to="/methodology" class="nav-link">
+        <button class="nav-button">Methodology</button>
       </router-link>
     </li>
   </ul>

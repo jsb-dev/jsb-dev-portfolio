@@ -23,7 +23,7 @@
   import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
   import { useStore } from 'vuex';
   import TopicList from '@/components/topic-list/TopicList.vue';
-  import { htmlTopicData as htmlData, cssTopicData as cssData, jsTopicData as jsData } from '@/data/topic-data.js';
+  import { htmlTopicData as htmlData, cssTopicData as cssData, jsTopicData as jsData } from '../../../assets/data/topic-data.js';
   
   export default {
   components: {
@@ -102,4 +102,4 @@
     color: white;
   }
   </style>
-  
+  @/assets/data/topic-data.js../../../assets/sb/topic-data.js

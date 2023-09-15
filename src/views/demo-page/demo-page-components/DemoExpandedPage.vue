@@ -40,7 +40,7 @@
   
 
   <script>
-import { htmlTopicData, cssTopicData, jsTopicData } from '@/data/topic-data.js';
+import { htmlTopicData, cssTopicData, jsTopicData } from '../../../assets/data/topic-data.js';
 import { mapState } from 'vuex';
 
 export default {
@@ -130,3 +130,4 @@ code {
   display: block;
 }
 </style>
+@/assets/data/topic-data.js../../../assets/sb/topic-data.js

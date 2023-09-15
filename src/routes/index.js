@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '@/views/HomePage.vue';
-import HTMLPage from '@/views/HTMLPage.vue';
-import CSSPage from '@/views/CSSPage.vue';
-import JSPage from '@/views/JSPage.vue';
 import DemoPage from '@/views/demo-page/DemoPage.vue';
+import PortfolioPage from '@/views/PortfolioPage.vue';
+import MethodologyPage from '@/views/MethodologyPage.vue';
 
 const routes = [
   {
@@ -12,24 +11,19 @@ const routes = [
     component: HomePage,
   },
   {
-    path: '/info/html',
-    name: 'HTMLPage',
-    component: HTMLPage,
-  },
-  {
-    path: '/info/css',
-    name: 'CSSPage',
-    component: CSSPage,
-  },
-  {
-    path: '/info/js',
-    name: 'JSPage',
-    component: JSPage,
-  },
-  {
     path: '/demo',
     name: 'DemoPage',
     component: DemoPage,
+  },
+  {
+    path: '/portfolio',
+    name: 'PortfolioPage',
+    component: PortfolioPage,
+  },
+  {
+    path: '/methodology',
+    name: 'MethodologyPage',
+    component: MethodologyPage,
   },
 ];
 

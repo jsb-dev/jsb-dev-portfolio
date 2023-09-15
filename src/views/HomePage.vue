@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { resumeData } from '@/data/resume-data.js'; 
+import { resumeData } from '../assets/data/resume-data.js'; 
 import { mapState } from 'vuex';
 
 export default {
@@ -100,3 +100,4 @@ p {
   padding: 1rem 2rem;
 }
 </style>
+@/assets/data/resume-data.js../assets/sb/resume-data.js
