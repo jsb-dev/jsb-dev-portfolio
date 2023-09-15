@@ -47,9 +47,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  #methodology-page {
     width: 100vw;
     height: 100vh;
     overflow: hidden;

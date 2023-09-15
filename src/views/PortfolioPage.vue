@@ -2,7 +2,16 @@
     <div id="portfolio-page">
       <div :style="{ height: mainContainerHeight }" id="main-container">
         <section id="portfolio-section">
-          <h1>My Portfolio</h1>
+          <div v-for="(item, index) in portfolioData" :key="index">
+            <component :is="item.tag">{{ item.text }}</component>
+            <div v-if="item.tag === 'h2'">
+              <VideoPlayer
+                v-for="(assetName, assetIndex) in videoAssets[item.text]"
+                :key="assetIndex"
+                :assetName="assetName"
+              ></VideoPlayer>
+            </div>
+          </div>
         </section>
       </div>
     </div>
@@ -10,10 +19,23 @@
   
   <script>
   import { mapState } from 'vuex';
+  import { portfolioData } from '../assets/data/portfolio-data.js';
+  import VideoPlayer from '../components/VideoPlayer.vue';  // Rename it to VideoPlayer
   
   export default {
     name: 'PortfolioPage',
+    components: {
+      VideoPlayer
+    },
     data() {
+      return {
+        portfolioData,
+        videoAssets: {
+          'Applicate': ['portfolio_1'],
+          'Bs. CS': ['portfolio_2', 'portfolio_3', 'portfolio_4'],
+          // Add more asset names here if you have more h2 sections
+        }
+      };
     },
     computed: {
       ...mapState(['viewportIsVertical']),
@@ -30,14 +52,15 @@
   }
   </script>
   
+  <!-- Styles remain the same -->
+  
+  
+  
   <style scoped>
-  #portfolio-page {
+  #methodology-page {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  #portfolio-page {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -50,7 +73,7 @@
     box-shadow: 0 1.5rem 1rem 1rem rgba(0, 0, 0, 1);
   }
   
-  #problem-solving-section {
+  #portfolio-section {
     padding: 1rem 2rem;
   }
   
@@ -70,8 +93,5 @@
   p {
     margin: 1.3rem 0;
   }
-  
-  .topic-section, section {
-    padding: 1rem 2rem;
-  }
+
   </style>
