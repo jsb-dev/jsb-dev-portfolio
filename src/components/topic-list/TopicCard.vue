@@ -1,6 +1,6 @@
 <template>
   <li>
-    <div :class="cardClass">
+    <div :class="cardClass" id="card-container">
       <div class="h3-container">
         <h3 class="card-title">{{ topic }}</h3>
       </div>
@@ -30,12 +30,12 @@ export default {
   props: {
     topic: {
       type: String,
-      required: true
+      required: true,
     },
     brief: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup() {
     const store = useStore();
@@ -44,7 +44,7 @@ export default {
     const cardClass = computed(() => {
       return {
         card: true,
-        'card-vertical': viewportIsVertical.value
+        'card-vertical': viewportIsVertical.value,
       };
     });
 
@@ -62,9 +62,9 @@ export default {
       showModal,
       openModal,
       closeModal,
-      cardClass
+      cardClass,
     };
-  }
+  },
 };
 </script>
 
@@ -72,8 +72,9 @@ export default {
 .card {
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: inset 0 0 1rem .1rem rgba(0, 0, 0, 0.3), 0 .5rem 1rem .5rem rgba(0, 0, 0, 0.1);
-  min-height: 15vh;
+  box-shadow: inset 0 0 1rem 0.1rem rgba(0, 0, 0, 0.3),
+    0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
+  min-height: 13rem;
   min-width: min(25rem, 24vw);
   position: relative;
   margin: 1.5rem;
@@ -94,7 +95,7 @@ export default {
 }
 
 .card:hover {
-  box-shadow: inset 0 0 1rem .5rem rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 1rem 0.5rem rgba(0, 0, 0, 0.8);
   color: white;
   background-color: #2c2c2c;
   border-radius: 2rem;
@@ -116,7 +117,7 @@ export default {
   transition: all 0.3s ease;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  margin: .8rem 0;
+  margin: 0.8rem 0;
 }
 
 .modal-overlay {
@@ -136,7 +137,7 @@ export default {
 .modal {
   background: white;
   padding: 3rem;
-  box-shadow: 0 .5rem 2rem .5rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5rem 2rem 0.5rem rgba(0, 0, 0, 0.3);
   background-color: #d4d4d4;
   z-index: 3;
   width: 40rem;
@@ -154,15 +155,18 @@ article {
   text-align: center;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 
-.h3-container, .card-btn-container {
+.h3-container,
+.card-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,11 +176,14 @@ article {
 }
 
 .card > .h3-container {
+  margin-top: 0;
+  margin-bottom: 2rem;
   padding-left: 1rem;
 }
 
 .card-vertical > .h3-container {
+  margin-top: 0;
+  margin-bottom: 1rem;
   padding-left: 0;
 }
-
 </style>
