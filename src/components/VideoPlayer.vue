@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ padding: aspectRatioPadding }" class="video-container">
+  <div class="video-container">
     <video controls :src="videoSrc" class="video-tag"></video>
   </div>
 </template>
@@ -13,9 +13,6 @@ export default {
     },
   },
   computed: {
-    aspectRatioPadding() {
-      return '56.25%';  // 16:9 aspect ratio
-    },
     videoSrc() {
       return require(`@/assets/videos/${this.assetName}.mp4`);
     },
@@ -26,8 +23,10 @@ export default {
 <style>
 .video-container {
   position: relative;
-  width: 100%;
   overflow: hidden;
+  width: 85rem;
+  max-width: 850px;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
 .video-tag {
@@ -35,7 +34,6 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   border-radius: 10px;
 }
 </style>

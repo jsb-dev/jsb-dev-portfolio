@@ -1,7 +1,7 @@
 export const portfolioData = [
   {
     tag: 'h1',
-    text: 'My Portfolio',
+    text: 'Portfolio',
   },
   {
     tag: 'h2',

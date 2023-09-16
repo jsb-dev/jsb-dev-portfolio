@@ -1,11 +1,50 @@
 <template>
   <div id="homepage">
     <div :style="{ height: mainContainerHeight }" id="main-container">
-      <section id="content-section">
-        <h1>My Resume</h1>
+      <section id="content-container">
+        <h1>Hello there</h1>
+        <section id="contact-section">
+          <h2>Contact Details</h2>
+          <ul>
+            <li>
+              Email:
+              <a href="mailto:jsb-dev@outlook.com">jsb-dev@outlook.com</a>
+            </li>
+            <li>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/jacob-booth-1a9390233/"
+                target="_blank"
+                >Jacob Booth</a
+              >
+            </li>
+            <li>
+              GitHub:
+              <a href="https://github.com/jsb-dev" target="_blank">jsb-dev</a>
+            </li>
+          </ul>
+        </section>
+        <section id="about-section">
+          <div v-for="(content, index) in aboutData" :key="'about-' + index">
+            <component :is="content.tag" v-if="content.tag !== 'ul'">
+              <strong v-if="content.strong">{{ content.text }}</strong>
+              <template v-else>{{ content.text }}</template>
+            </component>
 
+            <ul v-if="content.tag === 'ul'">
+              <li
+                v-for="(listItem, listItemIndex) in content.listItems"
+                :key="'listItem-' + listItemIndex"
+              >
+                {{ listItem }}
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <h1>My Resume</h1>
         <section
-          class="topic-section"
+          class="resume-section"
           v-for="(sectionData, index) in resumeData"
           :key="'section-' + index"
         >
@@ -30,13 +69,15 @@
 </template>
 
 <script>
-import { resumeData } from '../assets/data/resume-data.js'; 
+import { resumeData } from '../assets/data/resume-data.js';
+import { aboutData } from '../assets/data/about-data.js';
 import { mapState } from 'vuex';
 
 export default {
   name: 'HomePage',
   data() {
     return {
+      aboutData,
       resumeData,
     };
   },
@@ -44,22 +85,27 @@ export default {
     ...mapState(['viewportIsVertical']),
     mainContainerHeight() {
       return this.viewportIsVertical ? '96vh' : '82vh';
-    }
+    },
   },
   created() {
-    window.addEventListener('resize', this.$store.dispatch.bind(this, 'updateLayout'));
+    window.addEventListener(
+      'resize',
+      this.$store.dispatch.bind(this, 'updateLayout')
+    );
   },
   unmounted() {
-    window.removeEventListener('resize', this.$store.dispatch.bind(this, 'updateLayout'));
-  }
-}
+    window.removeEventListener(
+      'resize',
+      this.$store.dispatch.bind(this, 'updateLayout')
+    );
+  },
+};
 </script>
 
 <style scoped>
 #homepage {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 #homepage {
@@ -69,13 +115,14 @@ export default {
 }
 
 #main-container {
-  overflow-Y: scroll;
+  overflow-y: scroll;
   width: 94vw;
   background-color: #d4d4d4;
   box-shadow: 0 1.5rem 1rem 1rem rgba(0, 0, 0, 1);
+  margin-top: 2rem;
 }
 
-#content-section {
+#content-container {
   padding: 1rem 2rem;
 }
 
@@ -96,8 +143,8 @@ p {
   margin: 1.3rem 0;
 }
 
-.topic-section, section {
+.resume-section,
+section {
   padding: 1rem 2rem;
 }
 </style>
-@/assets/data/resume-data.js../assets/sb/resume-data.js
