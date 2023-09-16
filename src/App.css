@@ -60,6 +60,7 @@ h1 {
 }
 
 h2 {
+  margin: 1rem;
   font-size: max(2rem, 11pt);
 }
 

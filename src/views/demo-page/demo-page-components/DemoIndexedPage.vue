@@ -101,7 +101,6 @@ export default {
 }
 
 h3 {
-  padding: 1rem 0 0 1.5rem;
   color: white;
 }
 </style>
