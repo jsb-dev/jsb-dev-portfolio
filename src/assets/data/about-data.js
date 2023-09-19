@@ -1,9 +1,5 @@
 export const aboutData = [
   {
-    tag: 'h1',
-    text: 'Who Am I?',
-  },
-  {
     tag: 'p',
     text: 'My name is Jacob, a second-year computer science student with a keen eye for both technical and creative solutions. I am currently on my journey to becoming a professional full-stack developer. My main specialty resides in the MERN stack, although I am well-versed in a diverse variety of modern development methods and technology.',
   },

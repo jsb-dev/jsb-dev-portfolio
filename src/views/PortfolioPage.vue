@@ -1,6 +1,9 @@
 <template>
-  <div id="portfolio-page">
-    <div :style="{ height: mainContainerHeight }" id="main-container">
+  <div
+    :style="{ alignItems: pageShellAlignItems, marginTop: pageShellMarginTop }"
+    class="page-shell"
+  >
+    <div :style="{ height: mainContainerHeight }" class="main-container">
       <section id="content-container">
         <section id="portfolio-section">
           <div v-for="(item, index) in portfolioData" :key="index">
@@ -20,7 +23,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { onMounted, onBeforeUnmount } from 'vue';
+import { mapState, useStore } from 'vuex';
 import { portfolioData } from '../assets/data/portfolio-data.js';
 import VideoPlayer from '../components/VideoPlayer.vue';
 
@@ -39,46 +43,35 @@ export default {
     };
   },
   computed: {
-    ...mapState(['viewportIsVertical']),
+    ...mapState(['viewportIsVertical', 'viewportIsPortable']),
     mainContainerHeight() {
       return this.viewportIsVertical ? '96vh' : '82vh';
     },
+    pageShellAlignItems() {
+      return this.viewportIsPortable ? 'center' : 'space-around';
+    },
+    pageShellMarginTop() {
+      return this.viewportIsPortable ? '0' : '3vh';
+    },
   },
-  created() {
-    window.addEventListener(
-      'resize',
-      this.$store.dispatch.bind(this, 'updateLayout')
-    );
-  },
-  unmounted() {
-    window.removeEventListener(
-      'resize',
-      this.$store.dispatch.bind(this, 'updateLayout')
-    );
+  setup() {
+    const store = useStore();
+    const handleResize = () => {
+      store.dispatch('updateLayout');
+    };
+
+    onMounted(() => {
+      window.addEventListener('resize', handleResize);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', handleResize);
+    });
   },
 };
 </script>
 
 <style scoped>
-#portfolio-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#main-container {
-  overflow-y: scroll;
-  width: 94vw;
-  background-color: #d4d4d4;
-  box-shadow: 0 1.5rem 1rem 1rem rgba(0, 0, 0, 1);
-}
-
-#content-container {
-}
-
 #portfolio-section {
   padding: 1rem 2rem;
   display: flex;

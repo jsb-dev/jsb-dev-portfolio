@@ -90,7 +90,7 @@ code {
   padding: 1rem;
 }
 
-li {
+section > li {
   list-style-type: square;
 }
 
@@ -100,4 +100,21 @@ section {
 
 section:nth-child(odd) {
   margin: 0;
+}
+
+.main-container {
+  padding: 1rem 2rem;
+  width: 94vw;
+  height: 82vh;
+  overflow-y: scroll;
+  background-color: #d4d4d4;
+  box-shadow: 0 1.5rem 1rem 1rem rgba(0, 0, 0, 1);
+}
+
+.page-shell {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }

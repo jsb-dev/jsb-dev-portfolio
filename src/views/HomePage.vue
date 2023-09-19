@@ -1,6 +1,9 @@
 <template>
-  <div id="homepage">
-    <div :style="{ height: mainContainerHeight }" id="main-container">
+  <div
+    :style="{ marginTop: pageShellMarginTop, alignItems: pageShellAlignItems }"
+    class="page-shell"
+  >
+    <div :style="{ height: mainContainerHeight }" class="main-container">
       <section id="content-container">
         <h1>Hello there</h1>
         <section id="contact-section">
@@ -71,7 +74,8 @@
 <script>
 import { resumeData } from '../assets/data/resume-data.js';
 import { aboutData } from '../assets/data/about-data.js';
-import { mapState } from 'vuex';
+import { mapState, useStore } from 'vuex';
+import { onMounted, onBeforeUnmount } from 'vue';
 
 export default {
   name: 'HomePage',
@@ -82,46 +86,35 @@ export default {
     };
   },
   computed: {
-    ...mapState(['viewportIsVertical']),
+    ...mapState(['viewportIsVertical', 'viewportIsPortable']),
     mainContainerHeight() {
       return this.viewportIsVertical ? '96vh' : '82vh';
     },
+    pageShellAlignItems() {
+      return this.viewportIsPortable ? 'center' : 'space-around';
+    },
+    pageShellMarginTop() {
+      return this.viewportIsPortable ? '0' : '3vh';
+    },
   },
-  created() {
-    window.addEventListener(
-      'resize',
-      this.$store.dispatch.bind(this, 'updateLayout')
-    );
-  },
-  unmounted() {
-    window.removeEventListener(
-      'resize',
-      this.$store.dispatch.bind(this, 'updateLayout')
-    );
+  setup() {
+    const store = useStore();
+    const handleResize = () => {
+      store.dispatch('updateLayout');
+    };
+
+    onMounted(() => {
+      window.addEventListener('resize', handleResize);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', handleResize);
+    });
   },
 };
 </script>
 
 <style scoped>
-#homepage {
-  display: flex;
-  justify-content: center;
-}
-
-#homepage {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#main-container {
-  overflow-y: scroll;
-  width: 94vw;
-  background-color: #d4d4d4;
-  box-shadow: 0 1.5rem 1rem 1rem rgba(0, 0, 0, 1);
-  margin-top: 2rem;
-}
-
 #content-container {
   padding: 1rem 2rem;
 }

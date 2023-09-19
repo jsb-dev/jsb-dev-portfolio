@@ -17,7 +17,7 @@
     </li>
     <li>
       <router-link to="/methodology" class="nav-link">
-        <button class="nav-button">Methodology</button>
+        <button class="nav-button">Method</button>
       </router-link>
     </li>
   </ul>
@@ -33,7 +33,7 @@
   padding: 1rem;
   min-height: 40px;
   background-color: #f5f5f578;
-  box-shadow: inset 0 -1rem 2.5rem .5rem rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 -1rem 2.5rem 0.5rem rgba(0, 0, 0, 0.6);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 2rem;
@@ -49,13 +49,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: #c37ee0df;
 }
 
 .nav-button:hover {
   background-color: #464646;
-  box-shadow: inset 0 0 30px 1px rgba(255, 255, 255, 0.8), 0 0 30px 1px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 30px 1px rgba(255, 255, 255, 0.8),
+    0 0 30px 1px rgba(0, 0, 0, 0.8);
   color: white;
   transform: translateY(-5px);
 }

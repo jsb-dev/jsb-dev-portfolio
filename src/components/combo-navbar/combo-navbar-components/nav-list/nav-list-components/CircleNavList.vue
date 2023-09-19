@@ -17,7 +17,7 @@
     </li>
     <li>
       <router-link to="/methodology" class="nav-link">
-        <button class="nav-button">Methodology</button>
+        <button class="nav-button">Method</button>
       </router-link>
     </li>
   </ul>

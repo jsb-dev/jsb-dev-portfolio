@@ -1,6 +1,6 @@
 <template>
   <div class="demo-page">
-    <button @click="toggleDemo" id="demo-button">Toggle Mapping</button>
+    <button @click="toggleDemo" id="demo-button">Toggle</button>
     <DemoExpandedPage v-if="isExpanded" />
     <DemoIndexedPage v-else />
   </div>
