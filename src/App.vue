@@ -16,13 +16,3 @@ export default {
   },
 };
 </script>
-
-<style>
-#app {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  border-radius: 0;
-  background-color: #282828;
-}
-</style>

@@ -5,9 +5,27 @@
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
       <section id="content-container">
-        <h1>Hello there</h1>
-        <section id="contact-section">
-          <h2>Contact Details</h2>
+        <h1>Hello</h1>
+        <section id="about-section">
+          <div v-for="(content, index) in aboutData" :key="'about-' + index">
+            <component :is="content.tag" v-if="content.tag !== 'ul'">
+              <strong v-if="content.strong">{{ content.text }}</strong>
+              <template v-else>{{ content.text }}</template>
+            </component>
+
+            <ul v-if="content.tag === 'ul'">
+              <li
+                v-for="(listItem, listItemIndex) in content.listItems"
+                :key="'listItem-' + listItemIndex"
+              >
+                {{ listItem }}
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="contact-container">
+          <h2>Contact</h2>
           <ul>
             <li>
               Email:
@@ -27,30 +45,13 @@
             </li>
           </ul>
         </section>
-        <section id="about-section">
-          <div v-for="(content, index) in aboutData" :key="'about-' + index">
-            <component :is="content.tag" v-if="content.tag !== 'ul'">
-              <strong v-if="content.strong">{{ content.text }}</strong>
-              <template v-else>{{ content.text }}</template>
-            </component>
 
-            <ul v-if="content.tag === 'ul'">
-              <li
-                v-for="(listItem, listItemIndex) in content.listItems"
-                :key="'listItem-' + listItemIndex"
-              >
-                {{ listItem }}
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <h1>My Resume</h1>
         <section
           class="resume-section"
           v-for="(sectionData, index) in resumeData"
           :key="'section-' + index"
         >
+          <h1>Experience and Skills</h1>
           <h2>{{ sectionData.topic }}</h2>
 
           <div v-if="Array.isArray(sectionData.brief)">
@@ -116,28 +117,6 @@ export default {
 
 <style scoped>
 #content-container {
-  padding: 1rem 2rem;
-}
-
-h1 {
-  color: #131313;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  color: #2f2f2f;
-}
-
-h3 {
-  color: #484848;
-}
-
-p {
-  margin: 1.3rem 0;
-}
-
-.resume-section,
-section {
   padding: 1rem 2rem;
 }
 </style>

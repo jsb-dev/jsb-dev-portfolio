@@ -6,6 +6,7 @@ export const aboutData = [
   {
     tag: 'h2',
     text: 'My Skill Set',
+    strong: true,
   },
   {
     tag: 'h3',

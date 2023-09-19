@@ -1,16 +1,17 @@
 <template>
-  <div id="demo-page">
-    <section :style="listsContainerStyles" id="lists-container">
+  <div
+    :style="{ alignItems: pageShellAlignItems, marginTop: pageShellMarginTop }"
+    class="page-shell"
+  >
+    <section :style="listsContainerStyles" class="main-container">
       <section>
         <h3>HTML</h3>
         <TopicList :topicData="htmlTopicData" />
       </section>
-
       <section>
         <h3>CSS</h3>
         <TopicList :topicData="cssTopicData" />
       </section>
-
       <section>
         <h3>JavaScript</h3>
         <TopicList :topicData="jsTopicData" />
@@ -21,7 +22,7 @@
 
 <script>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
-import { useStore } from 'vuex';
+import { mapState, useStore } from 'vuex';
 import TopicList from '@/components/topic-list/TopicList.vue';
 import {
   htmlTopicData as htmlData,
@@ -32,6 +33,18 @@ import {
 export default {
   components: {
     TopicList,
+  },
+  computed: {
+    ...mapState(['viewportIsVertical', 'viewportIsPortable']),
+    mainContainerHeight() {
+      return this.viewportIsVertical ? '96vh' : '82vh';
+    },
+    pageShellAlignItems() {
+      return this.viewportIsPortable ? 'center' : 'space-around';
+    },
+    pageShellMarginTop() {
+      return this.viewportIsPortable ? '0' : '3vh';
+    },
   },
   setup() {
     const store = useStore();
@@ -61,23 +74,23 @@ export default {
     const listsContainerStyles = computed(() => {
       const baseStyles = {
         display: 'flex',
-        flexWrap: 'wrap',
         flexDirection: 'row',
+        flexWrap: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '92vw',
+        animation: 'fadeIn 0.5s ease-in-out',
       };
       if (store.state.viewportIsVertical && store.state.viewportIsPortable) {
         return {
           ...baseStyles,
+          paddingTop: '20vh',
           flexWrap: 'none',
-          flexDirection: 'row',
-          marginTop: '8vh',
+          overflow: 'hidden',
         };
       } else {
         return {
           ...baseStyles,
-          flexDirection: 'row',
+          flexDirection: 'column',
         };
       }
     });
@@ -91,17 +104,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#demo-page {
-  width: 100vw;
-  height: 88vh;
-  display: flex;
-  justify-content: center;
-}
-
-h3 {
-  color: white;
-}
-</style>
-@/assets/data/topic-data.js../../../assets/sb/topic-data.js

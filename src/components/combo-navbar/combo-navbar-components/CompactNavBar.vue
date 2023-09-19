@@ -1,7 +1,21 @@
 <template>
   <div id="container">
-    <button v-if="!isDrawerOpen" @click="toggleDrawer" id="open-btn">Menu</button>
-    <button v-if="isDrawerOpen" @click="toggleDrawer" id="close-btn">Close</button>
+    <button
+      v-if="!isDrawerOpen"
+      @click="toggleDrawer"
+      class="compact-nav-button"
+      id="open-btn"
+    >
+      Menu
+    </button>
+    <button
+      v-if="isDrawerOpen"
+      @click="toggleDrawer"
+      class="compact-nav-button"
+      id="close-btn"
+    >
+      Close
+    </button>
     <div v-if="isDrawerOpen" class="overlay" @click="toggleDrawer"></div>
     <transition name="slide">
       <div v-if="isDrawerOpen" class="modal">
@@ -11,14 +25,13 @@
   </div>
 </template>
 
-
 <script>
 import { ref } from 'vue';
 import NavList from './nav-list/NavList.vue';
 
 export default {
   components: {
-    NavList
+    NavList,
   },
   setup() {
     const isDrawerOpen = ref(false);
@@ -28,9 +41,9 @@ export default {
 
     return {
       isDrawerOpen,
-      toggleDrawer
+      toggleDrawer,
     };
-  }
+  },
 };
 </script>
 
@@ -38,7 +51,7 @@ export default {
 #container {
   position: fixed;
   bottom: 8rem;
-  right: 10rem;
+  right: 8rem;
   z-index: 1000;
 }
 
@@ -48,32 +61,27 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1000;
 }
 
 #open-btn,
-
 #close-btn {
   position: fixed;
-  bottom: 5vh;
-  right: 10vw;
+  bottom: 4vh;
+  right: 4vw;
   z-index: 1005;
-  width: 8rem;
-  height: 8rem;
-  border-radius: 2.5rem;
-  opacity: .8;
-  transition: all .1s ease-in-out;
+  opacity: 0.8;
 }
 
 #open-btn {
-  box-shadow: 0 .5rem 7rem 1rem rgba(0, 0, 0, .7), 0 .5rem 1.8rem 1.5rem rgba(0, 0, 0, 0.5);
-
+  box-shadow: 0 0.5rem 7rem 1rem rgba(0, 0, 0, 0.7),
+    0 0.5rem 1.8rem 1.5rem rgba(0, 0, 0, 0.5);
 }
 
 #close-btn {
   opacity: 1;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .modal {
@@ -82,7 +90,7 @@ export default {
   right: 1rem;
   z-index: 1002;
   opacity: 1;
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .slide-enter-active,
@@ -90,10 +98,7 @@ export default {
 .slide-enter,
 .slide-leave {
   opacity: 0;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   transform: translateY(30%);
 }
-
 </style>
-
-  

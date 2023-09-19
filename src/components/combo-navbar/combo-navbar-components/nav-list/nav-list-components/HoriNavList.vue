@@ -1,22 +1,22 @@
 <template>
   <ul class="horizontal-list">
-    <li>
-      <router-link to="/" class="nav-link">
+    <li class="button-li">
+      <router-link to="/">
         <button class="nav-button">Home</button>
       </router-link>
     </li>
-    <li>
-      <router-link to="/demo" class="nav-link">
+    <li class="button-li">
+      <router-link to="/demo">
         <button class="nav-button">Demo</button>
       </router-link>
     </li>
-    <li>
-      <router-link to="/portfolio" class="nav-link">
+    <li class="button-li">
+      <router-link to="/portfolio">
         <button class="nav-button">Portfolio</button>
       </router-link>
     </li>
-    <li>
-      <router-link to="/methodology" class="nav-link">
+    <li class="button-li">
+      <router-link to="/methodology">
         <button class="nav-button">Method</button>
       </router-link>
     </li>
@@ -29,11 +29,9 @@
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
-  height: 10vh;
-  padding: 1rem;
-  min-height: 40px;
-  background-color: #f5f5f578;
-  box-shadow: inset 0 -1rem 2.5rem 0.5rem rgba(0, 0, 0, 0.6);
+  min-height: 70px;
+  background-color: #575757;
+  box-shadow: inset 0 0 2.5rem 0.1rem rgba(0, 0, 0, 0.6);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 2rem;
@@ -41,30 +39,20 @@
 }
 
 .nav-button {
-  color: #fff;
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  transition: all 0.2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
-  background-color: #c37ee0df;
+  font-size: 1.2rem;
+  padding: 1rem;
 }
 
 .nav-button:hover {
-  background-color: #464646;
-  box-shadow: inset 0 0 30px 1px rgba(255, 255, 255, 0.8),
-    0 0 30px 1px rgba(0, 0, 0, 0.8);
-  color: white;
-  transform: translateY(-5px);
+  border-radius: 1.2rem;
 }
-
-.nav-link {
-  text-decoration: none;
-  text-align: center;
-  color: white;
-  font-size: 1rem;
+.button-li {
+  width: 13vw;
+  height: 7vh;
+  border-radius: 0.8rem;
+  box-shadow: inset 0 0 2.5rem 0.1rem rgba(255, 255, 255, 0.5),
+    0 0 2.5rem 0.1rem rgb(0, 0, 0);
 }
 </style>
