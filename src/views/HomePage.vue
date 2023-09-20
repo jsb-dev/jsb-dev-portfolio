@@ -4,10 +4,15 @@
     class="page-shell"
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
-      <section id="content-container">
-        <h1>Hello</h1>
+      <section id="content-container" class="content-container">
+        <h1>Hello there</h1>
         <section id="about-section">
-          <div v-for="(content, index) in aboutData" :key="'about-' + index">
+          <h2>My Skill Set</h2>
+          <div
+            v-for="(content, index) in aboutData"
+            :key="'about-' + index"
+            class="map-container"
+          >
             <component :is="content.tag" v-if="content.tag !== 'ul'">
               <strong v-if="content.strong">{{ content.text }}</strong>
               <template v-else>{{ content.text }}</template>
@@ -24,9 +29,9 @@
           </div>
         </section>
 
-        <section id="contact-container">
+        <section id="contact-section">
           <h2>Contact</h2>
-          <ul>
+          <ul id="contact-list">
             <li>
               Email:
               <a href="mailto:jsb-dev@outlook.com">jsb-dev@outlook.com</a>
@@ -51,20 +56,20 @@
           v-for="(sectionData, index) in resumeData"
           :key="'section-' + index"
         >
-          <h1>Experience and Skills</h1>
-          <h2>{{ sectionData.topic }}</h2>
-
-          <div v-if="Array.isArray(sectionData.brief)">
-            <div
-              v-for="(nestedTopicData, nestedIndex) in sectionData.brief"
-              :key="'nested-' + nestedIndex"
-            >
-              <h3>{{ nestedTopicData.topic }}</h3>
-              <p>{{ nestedTopicData.brief }}</p>
+          <div class="map-container">
+            <h2>{{ sectionData.topic }}</h2>
+            <div v-if="Array.isArray(sectionData.brief)">
+              <div
+                v-for="(nestedTopicData, nestedIndex) in sectionData.brief"
+                :key="'nested-' + nestedIndex"
+              >
+                <h3>{{ nestedTopicData.topic }}</h3>
+                <p>{{ nestedTopicData.brief }}</p>
+              </div>
             </div>
-          </div>
-          <div v-else>
-            <p>{{ sectionData.brief }}</p>
+            <div v-else>
+              <p>{{ sectionData.brief }}</p>
+            </div>
           </div>
         </section>
       </section>
@@ -116,7 +121,64 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  margin-top: 5rem;
+}
+
+h1,
+h3 {
+  margin-top: 2rem;
+}
+
 #content-container {
   padding: 1rem 2rem;
+}
+
+ul {
+  padding-left: 4rem;
+}
+
+li {
+  list-style-type: square;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  & > * {
+    margin-bottom: 0.5rem;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  & > ul {
+    margin-top: 0.5rem;
+  }
+
+  & > ul > li {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  & > ul > li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#contact-section {
+  margin: 5rem 0;
+}
+
+#contact-section * {
+  margin: 1rem;
+}
+
+#contact-list li {
+  padding: 0;
+  margin: 0;
 }
 </style>

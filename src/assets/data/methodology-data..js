@@ -1,7 +1,7 @@
 export const problemSolvingData = [
   {
     tag: 'h1',
-    text: 'My problem-solving methodology',
+    text: 'Problem solving methodology',
   },
   {
     tag: 'p',

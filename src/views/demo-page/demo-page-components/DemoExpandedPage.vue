@@ -4,15 +4,15 @@
     class="page-shell"
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
-      <section class="content-section">
+      <section class="content-container">
         <h1>HTML, CSS and JavaScript</h1>
 
-        <!-- HTML Section -->
-        <section class="topic-section">
+        <section class="topic-section" id="html-section">
           <h2>HTML Fundamentals</h2>
           <div
             v-for="(topicData, index) in htmlTopicData"
             :key="'html-' + index"
+            class="topic-map-container"
           >
             <h3>{{ topicData.topic }}</h3>
             <p>{{ topicData.brief }}</p>
@@ -21,9 +21,15 @@
         </section>
 
         <!-- CSS Section -->
-        <section class="topic-section">
-          <h2>CSS Concepts</h2>
-          <div v-for="(topicData, index) in cssTopicData" :key="'css-' + index">
+        <section class="topic-section" id="css-section">
+          <div class="h2-container">
+            <h2>CSS Concepts</h2>
+          </div>
+          <div
+            v-for="(topicData, index) in cssTopicData"
+            :key="'css-' + index"
+            class="topic-map-container"
+          >
             <h3>{{ topicData.topic }}</h3>
             <p>{{ topicData.brief }}</p>
             <code v-if="topicData.code">{{ topicData.code }}</code>
@@ -31,9 +37,13 @@
         </section>
 
         <!-- JS Section -->
-        <section class="topic-section">
+        <section class="topic-section" id="js-section">
           <h2>JavaScript Capabilities</h2>
-          <div v-for="(topicData, index) in jsTopicData" :key="'js-' + index">
+          <div
+            v-for="(topicData, index) in jsTopicData"
+            :key="'js-' + index"
+            class="topic-map-container"
+          >
             <h3>{{ topicData.topic }}</h3>
             <p>{{ topicData.brief }}</p>
             <code v-if="topicData.code">{{ topicData.code }}</code>
@@ -108,17 +118,51 @@ export default {
 
 <style scoped>
 h1 {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
+h2,
+h3,
 p,
 code {
-  margin: 1.3rem 0;
+  margin: 5rem 0;
+}
+
+#css-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
 }
 
 .topic-section,
 section {
   padding: 1rem 2rem;
+}
+
+#html-section .topic-map-container:nth-child(even) {
+  background-color: #303030;
+  padding: 1rem;
+}
+
+#html-section .topic-map-container:nth-child(even) * {
+  text-align: right;
+}
+
+#css-section .h2-container,
+#css-section .topic-map-container:nth-child(4),
+#css-section .topic-map-container:nth-child(5),
+#css-section .topic-map-container:nth-child(8),
+#css-section .topic-map-container:nth-child(9),
+#css-section .topic-map-container:nth-child(12),
+#css-section .topic-map-container:nth-child(13),
+#css-section .topic-map-container:nth-child(16) {
+  background-color: #303030;
+  padding: 0 3rem;
+}
+
+#css-section .h2-container {
+  display: flex;
 }
 
 code {

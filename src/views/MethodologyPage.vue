@@ -4,8 +4,12 @@
     class="page-shell"
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
-      <section id="problem-solving-section">
-        <div v-for="(item, index) in problemSolvingData" :key="index">
+      <section id="problem-solving-section" class="content-container">
+        <div
+          v-for="(item, index) in problemSolvingData"
+          :key="index"
+          id="topic-map-container"
+        >
           <div v-if="index % 2 === 0" class="topic-container">
             <component :is="item.tag" class="problem-solving-text">{{
               item.text
@@ -72,15 +76,40 @@ export default {
   padding: 1rem 2rem;
 }
 
-h1 {
-  margin-bottom: 1rem;
+.problem-solving-text {
+  padding: 2rem 0;
 }
+
+h1 {
+  margin: 0 12vw;
+}
+
+h2 {
+  margin-right: 8vwrem;
+}
+
+#topic-map-container:nth-child(3) > div,
+#topic-map-container:nth-child(7) > div,
+#topic-map-container:nth-child(12) > div {
+  flex-direction: row-reverse;
+}
+
+#topic-map-container:nth-child(3) h2,
+#topic-map-container:nth-child(7) h2,
+#topic-map-container:nth-child(12) h2 {
+  margin-left: 8vw;
+  margin-right: 0;
+  text-align: right;
+}
+
 p {
-  margin: 1.3rem 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 img {
-  width: 50%;
+  width: 65%;
 }
 
 .topic-section,
@@ -93,6 +122,10 @@ section {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 8rem;
+  padding: 0 1rem;
+}
+
+.topic-container h2 {
+  margin-right: 1rem;
 }
 </style>

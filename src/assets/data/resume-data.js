@@ -1,6 +1,6 @@
 export const resumeData = [
   {
-    topic: 'Profile',
+    topic: 'Brief',
     brief:
       'A dedicated and methodical professional with a diverse skill set in computer science and creative media. Having worked in various industries, I easily adapt to different work environments, thrive in both individual and collaborative settings, and build robust relationships with clients and colleagues.',
   },

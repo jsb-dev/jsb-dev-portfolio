@@ -14,7 +14,7 @@
   scrollbar-width: thin;
   scrollbar-color: #565656 #dcdcdc;
   text-decoration: none;
-  color: rgb(205, 229, 236);
+  color: rgb(232, 222, 255);
   letter-spacing: 0.1rem;
   transition: all 0.3s ease-in-out;
 }
@@ -48,35 +48,57 @@
   background-color: #1d1d1d;
 }
 
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
 h1 {
   font-size: max(2.5rem, 12pt);
+  color: rgb(155, 153, 255);
+  letter-spacing: 0.2rem;
+  word-spacing: 0.3rem;
+  text-align: center;
 }
 
 h2 {
   font-size: max(2.2rem, 11pt);
+  color: rgb(147, 158, 240);
+  letter-spacing: 0.2rem;
+  word-spacing: 0.4rem;
+  margin-left: 0.5rem;
 }
 
-h3,
+h3 {
+  font-size: max(1.5rem, 10pt);
+  color: rgb(175, 186, 252);
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  word-spacing: 0.5rem;
+}
+
 p,
 code,
 button,
 article,
 li {
-  font-size: max(1rem, 10pt);
-  font-weight: 500;
+  font-size: max(1.5rem, 10pt);
+  font-weight: 400;
 }
 
 p,
 code,
 button,
 article {
-  margin: 2rem;
+  margin: 3rem;
 }
 
 p,
 h3,
 code {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 section {
@@ -84,18 +106,7 @@ section {
 }
 
 img {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.main-container {
-  padding: 1rem 2rem;
-  width: 94vw;
-  height: 82vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background-color: #1d1d1d;
-  box-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 1),
-    inset 0 0 4rem 0.1rem rgba(255, 255, 255, 0.4);
+  border-radius: 2rem;
 }
 
 .main-container,
@@ -108,6 +119,21 @@ img {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.main-container {
+  padding: 3rem;
+  width: 94vw;
+  height: 82vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #1d1d1d;
+  box-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 1),
+    inset 0 0 4rem 0.1rem rgba(255, 255, 255, 0.4);
+}
+
+.main-container * {
+  animation: fadeIn 1s ease-in-out;
 }
 
 .horizontal-list *:hover,
@@ -135,11 +161,16 @@ button,
 #demo-button {
   background-color: rgba(0, 137, 222, 0.909);
   border-radius: 1.5rem;
+  text-transform: uppercase;
 }
 
 .button-li {
   width: 9rem;
   height: 9rem;
+}
+
+.button-li * {
+  text-transform: uppercase;
 }
 
 .button-li:hover,

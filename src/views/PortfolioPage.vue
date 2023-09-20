@@ -4,7 +4,7 @@
     class="page-shell"
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
-      <section id="content-container">
+      <section class="content-container">
         <section id="portfolio-section">
           <div v-for="(item, index) in portfolioData" :key="index">
             <component :is="item.tag">{{ item.text }}</component>
@@ -84,6 +84,6 @@ h1 {
 }
 
 p {
-  margin: 1.3rem 0;
+  margin: 1rem 0 5rem 0;
 }
 </style>

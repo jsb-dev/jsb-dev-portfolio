@@ -32,9 +32,9 @@ export default {
 <style scoped>
 #demo-button {
   position: fixed;
-  bottom: 5vh;
-  left: 10vw;
+  bottom: 4rem;
+  left: 4rem;
   z-index: 1005;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 </style>
