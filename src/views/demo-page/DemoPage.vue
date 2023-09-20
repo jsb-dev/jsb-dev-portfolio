@@ -35,10 +35,6 @@ export default {
   bottom: 5vh;
   left: 10vw;
   z-index: 1005;
-  width: 8rem;
-  height: 8rem;
-  border-radius: 2.5rem;
   opacity: 0.8;
-  transition: all 0.1s ease-in-out;
 }
 </style>

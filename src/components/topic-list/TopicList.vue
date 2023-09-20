@@ -1,8 +1,23 @@
 <template>
   <section>
-    <div :class="{ 'vertical-container': viewportIsVertical, 'horizontal-container': !viewportIsVertical }">
-      <ul :class="{ 'vertical-list': viewportIsVertical, 'horizontal-list': !viewportIsVertical }">
-        <TopicCard v-for="topic in topicData" :key="topic.id" :topic="topic.topic" :brief="topic.brief" />
+    <div
+      :class="{
+        'vertical-container': viewportIsVertical,
+        'horizontal-container': !viewportIsVertical,
+      }"
+    >
+      <ul
+        :class="{
+          'vertical-list': viewportIsVertical,
+          'horizontal-list': !viewportIsVertical,
+        }"
+      >
+        <TopicCard
+          v-for="topic in topicData"
+          :key="topic.id"
+          :topic="topic.topic"
+          :brief="topic.brief"
+        />
       </ul>
     </div>
   </section>
@@ -17,20 +32,20 @@ export default {
   props: {
     topicData: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
-    TopicCard
+    TopicCard,
   },
   setup() {
     const store = useStore();
     const viewportIsVertical = computed(() => store.state.viewportIsVertical);
 
     return {
-      viewportIsVertical
+      viewportIsVertical,
     };
-  }
+  },
 };
 </script>
 
@@ -38,6 +53,8 @@ export default {
 .vertical-list {
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 28vw;
 }
 
 .horizontal-list {
@@ -47,7 +64,6 @@ export default {
 .vertical-container {
   overflow-x: hidden;
   height: 92vh;
-  width: 30vw;
 }
 
 .horizontal-container {
@@ -59,8 +75,5 @@ ul {
   display: flex;
   list-style: none;
   padding: 0;
-  min-width: fit-content;
-  overflow: hidden;
 }
-
 </style>

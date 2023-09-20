@@ -108,16 +108,7 @@ export default {
 
 <style scoped>
 h1 {
-  color: #131313;
   margin-bottom: 1rem;
-}
-
-h2 {
-  color: #2f2f2f;
-}
-
-h3 {
-  color: #484848;
 }
 
 p,
@@ -131,7 +122,7 @@ section {
 }
 
 code {
-  background-color: #f5f5f5;
+  background-color: #4e4e4e;
   font-family: monospace;
   padding: 1rem 2rem;
   display: block;

@@ -30,7 +30,7 @@
   align-items: center;
   list-style-type: none;
   min-height: 70px;
-  background-color: #575757;
+  background-color: #62666d;
   box-shadow: inset 0 0 2.5rem 0.1rem rgba(0, 0, 0, 0.6);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -42,16 +42,15 @@
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.2rem;
-  padding: 1rem;
-}
-
-.nav-button:hover {
-  border-radius: 1.2rem;
+  font-weight: 700;
+  width: 13vw;
+  height: 7vh;
+  margin: 0;
 }
 .button-li {
   width: 13vw;
   height: 7vh;
-  border-radius: 0.8rem;
+  text-align: center;
   box-shadow: inset 0 0 2.5rem 0.1rem rgba(255, 255, 255, 0.5),
     0 0 2.5rem 0.1rem rgb(0, 0, 0);
 }

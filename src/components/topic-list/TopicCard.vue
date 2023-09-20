@@ -1,6 +1,6 @@
 <template>
   <li>
-    <div :class="cardClass" id="card-container">
+    <div :class="cardClass">
       <div class="h3-container">
         <h3 class="card-title">{{ topic }}</h3>
       </div>
@@ -9,16 +9,25 @@
       </div>
     </div>
 
-    <transition name="fade">
-      <div v-if="showModal" class="modal-overlay">
-        <div class="modal">
+    <section class="modal-container">
+      <div
+        v-if="showModal"
+        :class="
+          viewportIsVertical
+            ? 'vertical-modal-overlay'
+            : 'horizontal-modal-overlay'
+        "
+      >
+        <div
+          :class="viewportIsVertical ? 'vertical-modal' : 'horizontal-modal'"
+        >
           <article>
             {{ brief }}
           </article>
           <button @click="closeModal" id="close-btn">Close</button>
         </div>
       </div>
-    </transition>
+    </section>
   </li>
 </template>
 
@@ -69,82 +78,98 @@ export default {
 </script>
 
 <style scoped>
+li:has(.card-vertical) {
+  margin: 2rem;
+}
+
+.vertical-modal-overlay {
+  transform: translateY(-30vh);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.horizontal-modal-overlay {
+  position: relative;
+}
+
+.horizontal-modal-overlay,
+.vertical-modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-modal,
+.horizontal-modal {
+  box-shadow: 0 0 5rem 0.5rem rgba(255, 255, 255, 0.1),
+    inset 0 0 4rem 0.2rem rgba(255, 255, 255, 0.2);
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.vertical-modal {
+  position: fixed;
+}
+
+.horizontal-modal {
+  position: relative;
+}
+
+.vertical-modal *,
+.horizontal-modal * {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card {
-  overflow: hidden;
-  transition: all 0.3s ease;
   box-shadow: inset 0 0 1rem 0.1rem rgba(0, 0, 0, 0.3),
     0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
-  min-height: 13rem;
-  min-width: min(25rem, 24vw);
-  position: relative;
-  margin: 1.5rem;
-  z-index: 1;
+  min-width: 120px;
+  width: 30rem;
+  max-width: 25vw;
+  height: 20vh;
+  margin: 1rem;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
-  background-color: #d4d4d4;
+  background-color: #637caa;
 }
 
 .card-vertical {
   display: flex-start;
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 5rem;
-  height: 25rem;
-  padding: 1rem;
+  height: 25vh;
+  padding: 0.5rem;
 }
 
 .card:hover {
-  box-shadow: inset 0 0 1rem 0.5rem rgba(0, 0, 0, 0.8);
-  color: white;
+  box-shadow: inset 0 0 1rem 0.5rem rgba(0, 0, 0, 0.8),
+    0 0 1rem 0.1rem rgba(255, 255, 255, 0.5);
   background-color: #2c2c2c;
-  border-radius: 2rem;
   transform: translateY(-5px);
 }
 
-.card:hover .card-title {
+.card:hover .card-button {
   color: rgb(231, 231, 231);
 }
 
 .card-title {
-  color: #333;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .card-btn {
-  color: #fff;
+  color: #ffffff;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  margin: 0.8rem 0;
-}
-
-.modal-overlay {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 2;
-}
-
-.modal {
-  background: white;
-  padding: 3rem;
-  box-shadow: 0 0.5rem 2rem 0.5rem rgba(0, 0, 0, 0.3);
-  background-color: #d4d4d4;
-  z-index: 3;
-  width: 40rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  margin: 1rem 0;
 }
 
 #close-btn {
@@ -153,16 +178,7 @@ export default {
 
 article {
   text-align: center;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
+  font-size: min(2rem, 12pt);
 }
 
 .h3-container,
@@ -170,14 +186,11 @@ article {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
   text-align: center;
 }
 
 .card > .h3-container {
   margin-top: 0;
-  margin-bottom: 2rem;
   padding-left: 1rem;
 }
 

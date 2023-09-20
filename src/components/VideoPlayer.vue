@@ -25,7 +25,7 @@ export default {
   position: relative;
   overflow: hidden;
   width: 85rem;
-  max-width: 80vw;
+  max-width: 75vw;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 

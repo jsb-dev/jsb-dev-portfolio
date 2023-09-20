@@ -16,6 +16,7 @@
   text-decoration: none;
   color: rgb(205, 229, 236);
   letter-spacing: 0.1rem;
+  transition: all 0.3s ease-in-out;
 }
 
 ::-webkit-scrollbar {
@@ -109,6 +110,13 @@ img {
   overflow: hidden;
 }
 
+.horizontal-list *:hover,
+.compact-nav-button:hover,
+.button-li:hover {
+  transform: translateY(-1px);
+  transition: all 0.8s ease-in-out;
+}
+
 button,
 .button-li,
 .button-li * {
@@ -123,8 +131,9 @@ button,
 }
 
 .button-li,
-.compact-nav-button {
-  background-color: rgba(0, 157, 255, 0.909);
+.compact-nav-button,
+#demo-button {
+  background-color: rgba(0, 137, 222, 0.909);
   border-radius: 1.5rem;
 }
 
@@ -134,11 +143,10 @@ button,
 }
 
 .button-li:hover,
-.compact-nav-button:hover {
-  transform: translateY(-0.1rem), scale(1.1);
-  border-radius: 2rem;
-  transition: all 0.2s ease-in-out;
+.compact-nav-button:hover,
+#demo-button:hover {
   background-color: #0077c6df;
+  border-radius: 2rem;
 }
 
 @keyframes fadeIn {

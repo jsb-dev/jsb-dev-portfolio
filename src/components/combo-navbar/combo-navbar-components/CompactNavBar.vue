@@ -77,11 +77,20 @@ export default {
 #open-btn {
   box-shadow: 0 0.5rem 7rem 1rem rgba(0, 0, 0, 0.7),
     0 0.5rem 1.8rem 1.5rem rgba(0, 0, 0, 0.5);
+  background-color: rgba(46, 198, 74, 0.909);
+}
+
+#open-btn:hover {
+  background-color: rgba(33, 143, 53, 0.909);
 }
 
 #close-btn {
-  opacity: 1;
-  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+  background-color: rgba(198, 46, 46, 0.909);
+}
+
+#close-btn:hover {
+  background-color: rgba(158, 36, 36, 0.909);
 }
 
 .modal {
