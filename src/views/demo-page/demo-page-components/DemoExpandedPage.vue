@@ -141,8 +141,8 @@ section {
 }
 
 #html-section .topic-map-container:nth-child(even) {
-  background-color: #303030;
-  padding: 1rem;
+  box-shadow: inset 0 0 3rem 0.2rem rgba(255, 255, 255, 0.2);
+  padding: 2rem;
 }
 
 #html-section .topic-map-container:nth-child(even) * {

@@ -7,7 +7,7 @@
       <section id="content-container" class="content-container">
         <h1>Hello there</h1>
         <section id="about-section">
-          <h2>My Skill Set</h2>
+          <h2>About Myself</h2>
           <div
             v-for="(content, index) in aboutData"
             :key="'about-' + index"
@@ -121,13 +121,9 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  margin-top: 5rem;
-}
-
-h1,
+h2,
 h3 {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 #content-container {
