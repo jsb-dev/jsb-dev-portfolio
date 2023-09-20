@@ -136,11 +136,12 @@ img {
   animation: fadeIn 1s ease-in-out;
 }
 
-.horizontal-list *:hover,
+.horizontal-list:nth-child(1) > :hover,
 .compact-nav-button:hover,
-.button-li:hover {
-  transform: translateY(-1px);
-  transition: all 0.8s ease-in-out;
+.button-li:hover,
+#demo-button:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease-in-out;
 }
 
 button,
@@ -159,9 +160,23 @@ button,
 .button-li,
 .compact-nav-button,
 #demo-button {
-  background-color: rgba(0, 137, 222, 0.909);
   border-radius: 1.5rem;
   text-transform: uppercase;
+}
+
+#demo-button {
+  background-color: #e0c634b7;
+}
+
+.button-li,
+.compact-nav-button {
+  background-color: #0583d7d6;
+}
+
+.compact-nav-button,
+#demo-button {
+  border-radius: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .button-li {
@@ -176,8 +191,42 @@ button,
 .button-li:hover,
 .compact-nav-button:hover,
 #demo-button:hover {
+  border-radius: 2.5rem;
+}
+
+.button-li:hover,
+.compact-nav-button:hover {
   background-color: #0077c6df;
-  border-radius: 2rem;
+}
+
+#demo-button:hover {
+  background-color: rgba(174, 154, 36, 0.852);
+}
+
+#open-btn {
+  background-color: rgba(46, 198, 74, 0.909);
+}
+
+#open-btn:hover {
+  background-color: rgba(33, 143, 53, 0.909);
+}
+
+#close-btn {
+  background-color: rgba(198, 46, 46, 0.677);
+}
+
+#close-btn:hover {
+  background-color: rgba(158, 36, 36, 0.909);
+}
+
+#open-btn,
+#close-btn {
+  box-shadow: -0.5rem -0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.6);
+}
+
+#open-btn:hover,
+#close-btn:hover {
+  box-shadow: inset 0 0 1rem 0.1rem rgba(255, 255, 255, 0.6);
 }
 
 @keyframes fadeIn {

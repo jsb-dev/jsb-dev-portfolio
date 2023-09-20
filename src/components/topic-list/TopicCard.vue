@@ -5,7 +5,22 @@
         <h3 class="card-title">{{ topic }}</h3>
       </div>
       <div class="card-btn-container">
-        <button class="card-btn" @click="openModal">Read</button>
+        <button
+          class="card-btn"
+          v-if="!showModal"
+          :id="'open-btn'"
+          @click="openModal"
+        >
+          Read
+        </button>
+        <button
+          class="card-btn"
+          v-if="showModal"
+          :id="'close-btn'"
+          @click="closeModal"
+        >
+          Close
+        </button>
       </div>
     </div>
 
@@ -13,7 +28,7 @@
       <div
         v-if="showModal"
         :class="
-          viewportIsVertical
+          viewportIsPortable
             ? 'vertical-modal-overlay'
             : 'horizontal-modal-overlay'
         "
@@ -24,7 +39,6 @@
           <article>
             {{ brief }}
           </article>
-          <button @click="closeModal" id="close-btn">Close</button>
         </div>
       </div>
     </section>
@@ -49,6 +63,7 @@ export default {
   setup() {
     const store = useStore();
     const viewportIsVertical = computed(() => store.state.viewportIsVertical);
+    const viewportIsPortable = computed(() => store.state.viewportIsPortable);
 
     const cardClass = computed(() => {
       return {
@@ -72,6 +87,8 @@ export default {
       openModal,
       closeModal,
       cardClass,
+      viewportIsVertical,
+      viewportIsPortable,
     };
   },
 };
@@ -82,14 +99,13 @@ li:has(.card-vertical) {
   margin: 2rem;
 }
 
-.vertical-modal-overlay {
-  transform: translateY(-30vh);
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
+.modal-container:has(.vertical-modal-overlay) {
+  transform: translateY(-5vh);
 }
 
-.horizontal-modal-overlay {
-  position: relative;
+.vertical-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
 }
 
 .horizontal-modal-overlay,
@@ -104,18 +120,24 @@ li:has(.card-vertical) {
   box-shadow: 0 0 5rem 0.5rem rgba(255, 255, 255, 0.1),
     inset 0 0 4rem 0.2rem rgba(255, 255, 255, 0.2);
   background-color: #272727;
+  height: fit-content;
+}
+
+.vertical-modal {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-
-.vertical-modal {
-  position: fixed;
+  overflow: hidden;
 }
 
 .horizontal-modal {
   position: relative;
+  overflow-y: scroll;
+  min-height: 40vh;
+  max-height: 40vh;
+  overflow-y: scroll;
 }
 
 .vertical-modal *,
@@ -129,9 +151,7 @@ li:has(.card-vertical) {
 .card {
   box-shadow: inset 0 0 1rem 0.1rem rgba(0, 0, 0, 0.3),
     0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
-  min-width: 120px;
-  width: 30rem;
-  max-width: 25vw;
+  min-width: 350px;
   height: 20vh;
   margin: 1rem;
   display: flex;
@@ -142,7 +162,9 @@ li:has(.card-vertical) {
 .card-vertical {
   display: flex-start;
   flex-direction: column;
-  height: 25vh;
+  min-height: 30vh;
+  min-width: 120px;
+  max-width: 120px;
   padding: 0.5rem;
 }
 
@@ -150,7 +172,6 @@ li:has(.card-vertical) {
   box-shadow: inset 0 0 1rem 0.5rem rgba(0, 0, 0, 0.8),
     0 0 1rem 0.1rem rgba(255, 255, 255, 0.5);
   background-color: #2c2c2c;
-  transform: translateY(-5px);
 }
 
 .card:hover .card-button {
@@ -169,11 +190,9 @@ li:has(.card-vertical) {
   cursor: pointer;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  margin: 1rem 0;
-}
-
-#close-btn {
-  margin-top: 2rem;
+  margin: 1rem;
+  width: 10rem;
+  height: 3rem;
 }
 
 article {
