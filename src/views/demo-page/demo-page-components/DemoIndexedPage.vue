@@ -3,17 +3,20 @@
     :style="{ alignItems: pageShellAlignItems, marginTop: pageShellMarginTop }"
     class="page-shell"
   >
-    <section :style="listsContainerStyles" class="main-container">
+    <section
+      :style="{ ...listsContainerStyles, height: mainContainerHeight }"
+      class="main-container"
+    >
       <section>
-        <h3>HTML</h3>
+        <h2>HTML</h2>
         <TopicList :topicData="htmlTopicData" />
       </section>
       <section>
-        <h3>CSS</h3>
+        <h2>CSS</h2>
         <TopicList :topicData="cssTopicData" />
       </section>
       <section>
-        <h3>JavaScript</h3>
+        <h2>JavaScript</h2>
         <TopicList :topicData="jsTopicData" />
       </section>
     </section>
@@ -43,7 +46,7 @@ export default {
       return this.viewportIsPortable ? 'center' : 'space-around';
     },
     pageShellMarginTop() {
-      return this.viewportIsPortable ? '0' : '3vh';
+      return this.viewportIsPortable ? '0' : '.9vh';
     },
   },
   setup() {
@@ -74,11 +77,8 @@ export default {
     const listsContainerStyles = computed(() => {
       const baseStyles = {
         display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        animation: 'fadeIn 0.5s ease-in-out',
       };
       if (store.state.viewportIsVertical && store.state.viewportIsPortable) {
         return {

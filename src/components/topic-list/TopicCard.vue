@@ -28,7 +28,7 @@
       <div
         v-if="showModal"
         :class="
-          viewportIsPortable
+          viewportIsVertical
             ? 'vertical-modal-overlay'
             : 'horizontal-modal-overlay'
         "
@@ -95,12 +95,23 @@ export default {
 </script>
 
 <style scoped>
+.card h3 {
+  font-size: 1.6rem;
+  padding-left: 4rem;
+  padding-top: 0.5rem;
+}
+
+.card-vertical h3 {
+  font-size: 1.2rem;
+  padding: 0 20rem;
+}
+
 li:has(.card-vertical) {
   margin: 2rem;
 }
 
 .modal-container:has(.vertical-modal-overlay) {
-  transform: translateY(-5vh);
+  transform: translateY(-9vh);
 }
 
 .vertical-modal-overlay {
@@ -132,11 +143,20 @@ li:has(.card-vertical) {
   overflow: hidden;
 }
 
+.card-vertical,
+.vertical-modal {
+  min-width: 120px;
+  max-width: 120px;
+}
+
+.vertical-modal * {
+  font-weight: 200;
+}
+
 .horizontal-modal {
   position: relative;
   overflow-y: scroll;
-  min-height: 40vh;
-  max-height: 40vh;
+  height: 40vh;
   overflow-y: scroll;
 }
 
@@ -162,9 +182,7 @@ li:has(.card-vertical) {
 .card-vertical {
   display: flex-start;
   flex-direction: column;
-  min-height: 30vh;
-  min-width: 120px;
-  max-width: 120px;
+  height: 33vh;
   padding: 0.5rem;
 }
 
@@ -182,17 +200,6 @@ li:has(.card-vertical) {
   color: white;
   font-weight: 700;
   text-transform: uppercase;
-}
-
-.card-btn {
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  margin: 1rem;
-  width: 10rem;
-  height: 3rem;
 }
 
 article {

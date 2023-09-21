@@ -54,7 +54,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 28vw;
+  width: 30vw;
 }
 
 .horizontal-list {
