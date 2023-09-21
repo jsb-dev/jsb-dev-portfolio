@@ -174,7 +174,6 @@ button:hover {
 
 button,
 .button-li,
-.button-li *,
 #open-btn,
 #close-btn,
 #demo-button,
@@ -189,11 +188,6 @@ button,
   width: 6rem;
   height: 6rem;
   font-weight: 700;
-}
-
-.button-li,
-.button-li *,
-.button-li *:hover {
   box-shadow: none;
 }
 
@@ -218,7 +212,8 @@ button,
 #demo-button:hover,
 .compact-nav-button:hover,
 #contact-btn:hover,
-#info-btn:hover {
+#info-btn:hover,
+.hori-button-li:hover {
   transform: translateY(-3px);
   transition: all 0.3s ease-in-out;
   border-radius: 1.8rem;
@@ -227,12 +222,11 @@ button,
 
 #contact-btn,
 #info-btn,
-.button-li,
-.compact-nav-button {
+.hori-button-li {
   background-color: #166294;
 }
 
-.button-li:hover,
+.hori-button-li:hover,
 .compact-nav-button:hover {
   background-color: #145783;
 }

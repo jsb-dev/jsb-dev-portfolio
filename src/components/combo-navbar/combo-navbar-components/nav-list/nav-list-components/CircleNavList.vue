@@ -24,11 +24,16 @@
 </template>
 
 <style scoped>
+button:hover {
+  box-shadow: none;
+}
 .circle-container {
   list-style-type: none;
   position: absolute;
-  bottom: 10rem;
-  right: 17rem;
+  bottom: 9.5rem;
+  right: 21rem;
+  background-color: black;
+  width: fit-content;
 }
 
 .circle-container li {
@@ -36,32 +41,34 @@
   transform-origin: 50% 50%;
   transform: rotate(var(--angle, 0deg)) translateY(-100%);
 }
-.circle-container li:nth-child(1) {
+.circle-container li:nth-of-type(1) {
+  transform: translateX(0.4rem) rotate(var(--angle, 0deg)) translateY(-100%);
   --angle: 0deg;
 }
 
-.circle-container li:nth-child(2) {
+.circle-container li:nth-of-type(2) {
   --angle: 90deg;
+  transform: translateX(0.7rem) rotate(var(--angle, 0deg)) translateY(-100%);
 }
 
-.circle-container li:nth-child(3) {
+.circle-container li:nth-of-type(3) {
   --angle: 180deg;
+  transform: translateX(-1.1rem) rotate(var(--angle, 0deg)) translateY(-100%);
 }
 
-.circle-container li:nth-child(4) {
+.circle-container li:nth-of-type(4) {
   --angle: 270deg;
+  transform: translateX(-1.1rem) rotate(var(--angle, 0deg)) translateY(-100%);
 }
 
 .nav-link {
-  text-transform: uppercase;
-  text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(var(--text-rotate, 0deg));
+  width: fit-content;
+  height: fit-content;
 }
 
 .circle-container li:nth-child(1) .nav-link {

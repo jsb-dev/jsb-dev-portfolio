@@ -1,21 +1,21 @@
 <template>
   <ul class="horizontal-list">
-    <li class="button-li">
+    <li class="hori-button-li">
       <router-link to="/">
         <button class="nav-button">Home</button>
       </router-link>
     </li>
-    <li class="button-li">
+    <li class="hori-button-li">
       <router-link to="/demo">
         <button class="nav-button">Demo</button>
       </router-link>
     </li>
-    <li class="button-li">
+    <li class="hori-button-li">
       <router-link to="/portfolio">
         <button class="nav-button">Portfolio</button>
       </router-link>
     </li>
-    <li class="button-li">
+    <li class="hori-button-li">
       <router-link to="/methodology">
         <button class="nav-button">Method</button>
       </router-link>
@@ -37,7 +37,7 @@
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
 }
-.button-li {
+.hori-button-li {
   box-shadow: inset 0 0 2.5rem 0.1rem rgba(255, 255, 255, 0.5),
     0 0 2.5rem 0.1rem rgb(0, 0, 0);
   text-align: center;
@@ -52,13 +52,13 @@
 }
 
 li,
-.button-li,
+.hori-button-li,
 .nav-button {
   height: 7vh;
 }
 
 li,
-.button-li,
+.hori-button-li,
 .nav-button {
   min-width: 15vw;
   min-width: 15vw;

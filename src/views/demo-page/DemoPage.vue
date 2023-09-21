@@ -1,6 +1,6 @@
 <template>
   <div class="demo-page">
-    <button @click="toggleDemo" id="demo-button"></button>
+    <button @click="toggleDemo" id="demo-button">!</button>
     <DemoExpandedPage v-if="isExpanded" />
     <DemoIndexedPage v-else />
   </div>
@@ -35,6 +35,6 @@ export default {
   top: min(7vh, 2rem);
   right: 0;
   z-index: 1005;
-  background-image: url('../../assets/icons/toggle.png');
+  font-size: 3rem;
 }
 </style>
