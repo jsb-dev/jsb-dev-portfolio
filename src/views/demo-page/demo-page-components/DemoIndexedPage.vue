@@ -16,7 +16,7 @@
         <TopicList :topicData="cssTopicData" />
       </section>
       <section>
-        <h2>JavaScript</h2>
+        <h2>JS</h2>
         <TopicList :topicData="jsTopicData" />
       </section>
     </section>
@@ -104,3 +104,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+h2 {
+  text-align: center;
+}
+</style>

@@ -1,45 +1,54 @@
 <template>
-  <div
-    :style="{ alignItems: pageShellAlignItems, marginTop: pageShellMarginTop }"
-    class="page-shell"
-  >
-    <div :style="{ height: mainContainerHeight }" class="main-container">
-      <section id="problem-solving-section" class="content-container">
-        <div
-          v-for="(item, index) in problemSolvingData"
-          :key="index"
-          id="topic-map-container"
-        >
-          <div v-if="index % 2 === 0" class="topic-container">
-            <component :is="item.tag" class="problem-solving-text">{{
-              item.text
-            }}</component>
-            <img
-              v-if="index > 0 && index / 2 <= 6"
-              :src="require(`@/assets/images/methodology_${index / 2}.jpg`)"
-            />
+  <div v-if="imagesLoaded">
+    <div
+      :style="{
+        alignItems: pageShellAlignItems,
+        marginTop: pageShellMarginTop,
+      }"
+      class="page-shell"
+    >
+      <div :style="{ height: mainContainerHeight }" class="main-container">
+        <section id="problem-solving-section" class="content-container">
+          <div
+            v-for="(item, index) in problemSolvingData"
+            :key="index"
+            id="topic-map-container"
+          >
+            <div v-if="index % 2 === 0" class="topic-container">
+              <component :is="item.tag" class="problem-solving-text">{{
+                item.text
+              }}</component>
+              <img
+                v-if="index > 0 && index / 2 <= 6"
+                :src="require(`@/assets/images/methodology_${index / 2}.jpg`)"
+              />
+            </div>
+            <div v-else class="problem-solving-text">
+              <component :is="item.tag" class="problem-solving-text">{{
+                item.text
+              }}</component>
+            </div>
           </div>
-          <div v-else class="problem-solving-text">
-            <component :is="item.tag" class="problem-solving-text">{{
-              item.text
-            }}</component>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
+  </div>
+  <div v-else class="loading-container">
+    <div class="spinner"></div>
   </div>
 </template>
 
 <script>
 import { onMounted, onBeforeUnmount } from 'vue';
 import { mapState, useStore } from 'vuex';
-import { problemSolvingData } from '@/assets/data/methodology-data.';
+import { problemSolvingData } from '@/assets/data/methodology-data';
 
 export default {
   name: 'MethodologyPage',
   data() {
     return {
       problemSolvingData,
+      imagesLoaded: false,
     };
   },
   computed: {
@@ -52,6 +61,24 @@ export default {
     },
     pageShellMarginTop() {
       return this.viewportIsPortable ? '0' : '3vh';
+    },
+  },
+  methods: {
+    async loadImages() {
+      const imgPromises = [];
+
+      for (let index = 1; index <= 6; index++) {
+        imgPromises.push(
+          new Promise((resolve) => {
+            const img = new Image();
+            img.src = require(`@/assets/images/methodology_${index}.jpg`);
+            img.onload = resolve;
+          })
+        );
+      }
+
+      await Promise.all(imgPromises);
+      this.imagesLoaded = true;
     },
   },
   setup() {
@@ -68,12 +95,15 @@ export default {
       window.removeEventListener('resize', handleResize);
     });
   },
+  mounted() {
+    this.loadImages();
+  },
 };
 </script>
 
 <style scoped>
 #problem-solving-section {
-  padding: 1rem 2rem;
+  padding: 4rem;
 }
 
 .problem-solving-text {
@@ -81,24 +111,25 @@ export default {
 }
 
 h1 {
-  margin: 0 12vw;
+  text-align: center;
 }
 
 h2 {
-  margin-right: 8vwrem;
+  margin: 1rem;
 }
 
 #topic-map-container:nth-child(3) > div,
 #topic-map-container:nth-child(7) > div,
-#topic-map-container:nth-child(12) > div {
+#topic-map-container:nth-child(11) > div {
   flex-direction: row-reverse;
 }
 
 #topic-map-container:nth-child(3) h2,
 #topic-map-container:nth-child(7) h2,
-#topic-map-container:nth-child(12) h2 {
-  margin-left: 8vw;
+#topic-map-container:nth-child(11) h2 {
+  margin-left: 4vw;
   margin-right: 0;
+  padding-right: 0;
   text-align: right;
 }
 
@@ -108,24 +139,40 @@ p {
   margin: 0;
 }
 
-img {
-  width: 65%;
-}
-
 .topic-section,
 section {
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .topic-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 0 1rem;
+  padding: 0;
 }
 
-.topic-container h2 {
-  margin-right: 1rem;
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 0.8rem solid rgba(123, 123, 123, 0.442);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border-top-color: #9b9b9b80;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

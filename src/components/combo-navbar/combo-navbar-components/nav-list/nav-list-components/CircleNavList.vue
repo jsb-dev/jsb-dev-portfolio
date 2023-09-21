@@ -27,8 +27,8 @@
 .circle-container {
   list-style-type: none;
   position: absolute;
-  bottom: 15vh;
-  right: 20rem;
+  bottom: 10rem;
+  right: 17rem;
 }
 
 .circle-container li {

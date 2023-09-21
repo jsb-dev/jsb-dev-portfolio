@@ -17,7 +17,7 @@ export const problemSolvingData = [
   },
   {
     tag: 'h2',
-    text: 'Heuristics',
+    text: 'Heuristic approach',
   },
   {
     tag: 'p',
@@ -25,7 +25,7 @@ export const problemSolvingData = [
   },
   {
     tag: 'h2',
-    text: 'Scope refinement',
+    text: 'Scope',
   },
   {
     tag: 'p',
@@ -33,7 +33,7 @@ export const problemSolvingData = [
   },
   {
     tag: 'h2',
-    text: 'Creativity',
+    text: 'Creative thinking',
   },
   {
     tag: 'p',

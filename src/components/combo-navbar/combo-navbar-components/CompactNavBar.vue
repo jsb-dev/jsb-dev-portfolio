@@ -50,8 +50,8 @@ export default {
 <style scoped>
 #container {
   position: fixed;
-  bottom: 8rem;
-  right: 8rem;
+  bottom: 0;
+  right: 0;
   z-index: 1000;
 }
 
@@ -61,7 +61,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(32, 32, 32, 0.356);
   z-index: 1000;
   animation: fadeIn 0.2s ease-in-out;
 }
@@ -69,8 +69,8 @@ export default {
 #open-btn,
 #close-btn {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 0;
+  right: 0;
   z-index: 1005;
   opacity: 0.8;
 }
@@ -78,7 +78,6 @@ export default {
 .modal {
   position: absolute;
   bottom: 7rem;
-  right: 1rem;
   z-index: 1002;
   opacity: 1;
   animation: fadeIn 0.2s ease-in-out;

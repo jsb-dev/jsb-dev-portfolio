@@ -111,7 +111,7 @@ li:has(.card-vertical) {
 }
 
 .modal-container:has(.vertical-modal-overlay) {
-  transform: translateY(-9vh);
+  transform: translateY(-5vh);
 }
 
 .vertical-modal-overlay {
@@ -180,10 +180,12 @@ li:has(.card-vertical) {
 }
 
 .card-vertical {
-  display: flex-start;
+  display: flex;
   flex-direction: column;
-  height: 33vh;
-  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 25vh;
+  padding: 2rem;
 }
 
 .card:hover {

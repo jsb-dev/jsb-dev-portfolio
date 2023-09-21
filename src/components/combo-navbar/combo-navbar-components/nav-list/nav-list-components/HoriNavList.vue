@@ -29,7 +29,7 @@
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
-  min-height: 70px;
+  min-height: 80px;
   background-color: #62666d;
   box-shadow: inset 0 0 2.5rem 0.1rem rgba(0, 0, 0, 0.6);
   border-top-left-radius: 0;
@@ -37,21 +37,30 @@
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
 }
-
+.button-li {
+  box-shadow: inset 0 0 2.5rem 0.1rem rgba(255, 255, 255, 0.5),
+    0 0 2.5rem 0.1rem rgb(0, 0, 0);
+  text-align: center;
+}
 .nav-button {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.2rem;
   font-weight: 700;
-  width: 13vw;
-  height: 7vh;
   margin: 0;
+  padding: 0;
 }
-.button-li {
-  width: 13vw;
+
+li,
+.button-li,
+.nav-button {
   height: 7vh;
-  text-align: center;
-  box-shadow: inset 0 0 2.5rem 0.1rem rgba(255, 255, 255, 0.5),
-    0 0 2.5rem 0.1rem rgb(0, 0, 0);
+}
+
+li,
+.button-li,
+.nav-button {
+  min-width: 15vw;
+  min-width: 15vw;
 }
 </style>
