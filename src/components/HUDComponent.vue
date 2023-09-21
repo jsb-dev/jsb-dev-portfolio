@@ -4,8 +4,8 @@
     <transition name="fade">
       <div v-if="showContactModal" id="contact-modal">
         <section id="contact-section">
-          <h2>Contact</h2>
           <ul id="contact-list">
+            <h2>Contact</h2>
             <li>
               Email:
               <a href="mailto:jsb-dev@outlook.com">jsb-dev@outlook.com</a>
@@ -29,9 +29,48 @@
 
     <button id="info-btn" @click="toggleInfoModal">Info</button>
     <transition name="fade">
-      <div v-if="showInfoModal" id="info-modal">
-        <p>This is placeholder content.</p>
-      </div>
+      <section>
+        <div v-if="showInfoModal" id="info-modal">
+          <ul id="info-list">
+            <h2>Info</h2>
+            <h3>HOME</h3>
+            <li>
+              An introduction to myself, my skills, and what I will bring to
+              your company.
+            </li>
+            <h3>DEMO</h3>
+            <li>
+              A demonstration of how I implement core HTML, CSS, and JS concepts
+              in Vue3 to creative a responsive, convenient UI.
+              <p>
+                Click the "Read" button to open a topic's corresponding
+                description
+              </p>
+              <p>Click the yellow button for content map toggling.</p>
+            </li>
+            <h3>PORTFOLIO</h3>
+            <li>
+              My past projects with their respective overviews, repo links, and
+              demonstrations.
+              <p>
+                <strong>Applicate</strong>
+                <br />
+                My first full-stack project!
+              </p>
+
+              <p>
+                <strong>Bs. CS</strong>
+                <br />
+                A running chronicle of my tertiary submissions
+              </p>
+            </li>
+            <h3>METHOD</h3>
+            <li>
+              A descriptive explanation of my problem solving methodology.
+            </li>
+          </ul>
+        </div>
+      </section>
     </transition>
   </div>
 </template>
@@ -58,6 +97,20 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  padding: 3rem 0;
+  margin: 1rem 0;
+}
+
+a {
+  text-decoration: underline;
+  color: rgb(185, 94, 238);
+}
+
+button {
+  margin: 1.8rem;
+}
+
 #hud-container {
   position: fixed;
   bottom: 0;
@@ -76,21 +129,26 @@ export default {
   align-items: center;
   width: 30rem;
   height: fit-content;
+  max-height: 50vh;
   box-shadow: inset 0 0 2rem 0.1rem rgba(255, 255, 255, 0.4),
     0 0 4rem 4rem rgba(0, 0, 0, 0.8);
+}
+
+#info-modal > * {
+  overflow-y: scroll;
 }
 
 #contact-modal,
 #info-modal,
 #contact-modal li {
   background-color: rgba(29, 29, 29, 0.95);
-  list-style-type: none;
   font-size: 1.5rem;
 }
 
 #contact-modal *,
 #info-modal * {
   padding: 1rem;
+  list-style-type: none;
 }
 
 .fade-enter-active,

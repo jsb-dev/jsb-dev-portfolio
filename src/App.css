@@ -58,7 +58,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   text-transform: uppercase;
 }
 
@@ -87,6 +88,13 @@ h3 {
   word-spacing: 0.5rem;
 }
 
+strong {
+  font-size: max(0.9rem, 9pt);
+  color: rgb(231, 224, 224);
+  font-weight: 700;
+  padding: 0;
+}
+
 p,
 a,
 code,
@@ -95,11 +103,6 @@ article,
 article * {
   font-size: max(1rem, 10pt);
   font-weight: 400;
-}
-
-a {
-  text-decoration: underline;
-  color: rgb(173, 137, 255);
 }
 
 p,

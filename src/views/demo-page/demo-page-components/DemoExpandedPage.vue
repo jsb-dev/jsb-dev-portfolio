@@ -135,6 +135,17 @@ code {
   grid-gap: 1rem;
 }
 
+#css-section .h2-container {
+  display: flex;
+}
+
+code {
+  background-color: #4e4e4e;
+  font-family: monospace;
+  padding: 1rem 2rem;
+  display: block;
+}
+
 .topic-section,
 section {
   padding: 1rem 2rem;
@@ -158,17 +169,16 @@ section {
 #css-section .topic-map-container:nth-child(13),
 #css-section .topic-map-container:nth-child(16) {
   background-color: #303030;
-  padding: 0 3rem;
+  padding: 0 1rem;
 }
 
-#css-section .h2-container {
-  display: flex;
-}
-
-code {
-  background-color: #4e4e4e;
-  font-family: monospace;
-  padding: 1rem 2rem;
-  display: block;
+#css-section .topic-map-container:nth-child(4),
+#css-section .topic-map-container:nth-child(5),
+#css-section .topic-map-container:nth-child(8),
+#css-section .topic-map-container:nth-child(9),
+#css-section .topic-map-container:nth-child(12),
+#css-section .topic-map-container:nth-child(13),
+#css-section .topic-map-container:nth-child(16) {
+  padding: 0 1rem;
 }
 </style>

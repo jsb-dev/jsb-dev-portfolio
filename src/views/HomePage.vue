@@ -138,6 +138,11 @@ li {
   list-style-type: square;
 }
 
+a {
+  text-decoration: underline;
+  color: rgb(185, 94, 238);
+}
+
 .map-container {
   display: flex;
   flex-direction: column;
