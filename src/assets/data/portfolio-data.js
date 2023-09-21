@@ -1,9 +1,5 @@
 export const portfolioData = [
   {
-    tag: 'h1',
-    text: 'Portfolio',
-  },
-  {
     tag: 'h2',
     text: 'Applicate',
   },

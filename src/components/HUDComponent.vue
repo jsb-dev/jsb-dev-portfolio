@@ -1,6 +1,6 @@
 <template>
   <div id="hud-container">
-    <button id="contact-btn" @click="toggleContactModal">Contact</button>
+    <button id="contact-btn" @click="toggleContactModal"></button>
     <transition name="fade">
       <div v-if="showContactModal" id="contact-modal">
         <section id="contact-section">
@@ -27,7 +27,7 @@
       </div>
     </transition>
 
-    <button id="info-btn" @click="toggleInfoModal">Info</button>
+    <button id="info-btn" @click="toggleInfoModal"></button>
     <transition name="fade">
       <section>
         <div v-if="showInfoModal" id="info-modal">
@@ -109,6 +109,13 @@ a {
 
 button {
   margin: 1.8rem;
+  padding: 0;
+}
+
+img {
+  max-width: 80%;
+  max-height: 80%;
+  margin: 0;
 }
 
 #hud-container {
@@ -149,6 +156,22 @@ button {
 #info-modal * {
   padding: 1rem;
   list-style-type: none;
+}
+
+#contact-btn,
+#info-btn,
+.compact-nav-button {
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#contact-btn {
+  background-image: url('../assets/icons/contact.png');
+}
+
+#info-btn {
+  background-image: url('../assets/icons/info.png');
 }
 
 .fade-enter-active,

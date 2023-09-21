@@ -69,6 +69,7 @@ h1 {
   letter-spacing: 0.2rem;
   word-spacing: 0.3rem;
   margin-top: 5vh;
+  text-align: end;
 }
 
 h2 {
@@ -121,12 +122,11 @@ section {
   margin: 1rem 0;
 }
 
-img::before,
 img {
-  width: 65%;
-  max-width: 600px;
+  max-width: 40rem;
   border-radius: 2rem;
   animation: fadeIn 1s ease-in-out;
+  margin: 3vh 0;
 }
 
 .main-container,
@@ -172,18 +172,12 @@ button:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.button-li,
-.button-li *,
-.button-li *:hover {
-  box-shadow: none;
-}
-
 button,
 .button-li,
+.button-li *,
 #open-btn,
 #close-btn,
 #demo-button,
-.button-li *,
 #contact-btn,
 #info-btn,
 .compact-nav-button {
@@ -191,10 +185,16 @@ button,
   background: none;
   cursor: pointer;
   text-transform: uppercase;
-  border-radius: 1rem;
+  border-radius: 4rem;
   width: 6rem;
   height: 6rem;
   font-weight: 700;
+}
+
+.button-li,
+.button-li *,
+.button-li *:hover {
+  box-shadow: none;
 }
 
 button,
@@ -204,7 +204,7 @@ button,
 #contact-btn,
 #info-btn,
 .compact-nav-button {
-  opacity: 0.8;
+  opacity: 0.9;
   max-width: 70px;
   max-height: 70px;
 }
@@ -229,7 +229,7 @@ button,
 #info-btn,
 .button-li,
 .compact-nav-button {
-  background-color: #166294ef;
+  background-color: #166294;
 }
 
 .button-li:hover,
@@ -238,28 +238,27 @@ button,
 }
 
 #demo-button {
-  background-color: #b9aa57e2;
+  background-color: #ca873bb8;
 }
 
 #demo-button:hover {
-  background-color: #9a8c3c;
+  background-color: #c28125ab;
 }
 
 #open-btn {
-  background-color: rgba(60, 142, 75, 0.894);
-  opacity: 1;
+  background-color: rgb(60, 142, 75);
 }
 
 #open-btn:hover {
-  background-color: rgb(44, 103, 55);
+  background-color: rgb(52, 130, 66);
 }
 
 #close-btn {
-  background-color: rgba(177, 57, 57, 0.833);
+  background-color: rgb(177, 57, 57);
 }
 
 #close-btn:hover {
-  background-color: rgb(139, 48, 48);
+  background-color: rgb(152, 38, 38);
 }
 
 @keyframes fadeIn {

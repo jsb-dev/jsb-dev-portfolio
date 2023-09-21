@@ -5,6 +5,7 @@
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
       <section class="content-container">
+        <h1>Portfolio</h1>
         <section id="portfolio-section">
           <div v-for="(item, index) in portfolioData" :key="index">
             <component :is="item.tag">{{ item.text }}</component>
@@ -80,7 +81,7 @@ export default {
 }
 
 h1 {
-  margin-bottom: 1rem;
+  margin: 2rem 2rem 0 0;
 }
 
 p {

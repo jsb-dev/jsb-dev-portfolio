@@ -176,7 +176,7 @@ li:has(.card-vertical) {
   margin: 1rem;
   display: flex;
   justify-content: space-evenly;
-  background-color: #637caa;
+  background-color: #4b5464;
 }
 
 .card-vertical {

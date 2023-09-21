@@ -5,17 +5,13 @@
       @click="toggleDrawer"
       class="compact-nav-button"
       id="open-btn"
-    >
-      Menu
-    </button>
+    ></button>
     <button
       v-if="isDrawerOpen"
       @click="toggleDrawer"
       class="compact-nav-button"
       id="close-btn"
-    >
-      Close
-    </button>
+    ></button>
     <div v-if="isDrawerOpen" class="overlay" @click="toggleDrawer"></div>
     <div>
       <div v-if="isDrawerOpen" class="modal">
@@ -72,7 +68,17 @@ export default {
   bottom: 0;
   right: 0;
   z-index: 1005;
-  opacity: 0.8;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#open-btn {
+  background-image: url('../../../assets/icons/menu.png');
+}
+
+#close-btn {
+  background-image: url('../../../assets/icons/close.png');
 }
 
 .modal {

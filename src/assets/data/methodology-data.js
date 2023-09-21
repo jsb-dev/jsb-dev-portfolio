@@ -1,9 +1,5 @@
 export const problemSolvingData = [
   {
-    tag: 'h1',
-    text: 'Problem solving methodology',
-  },
-  {
     tag: 'p',
     text: 'The method I follow draws on a variety of different paradigms. This allows me to orient myself toward the most plausible solution given the context of the scenario. I prefer to take a structured, step-by-step approach to my solution, shifting between paradigms as the scope changes.',
   },

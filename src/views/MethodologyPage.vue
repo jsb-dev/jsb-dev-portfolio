@@ -9,12 +9,19 @@
     >
       <div :style="{ height: mainContainerHeight }" class="main-container">
         <section id="problem-solving-section" class="content-container">
+          <h1>Problem Solving Methodology</h1>
           <div
             v-for="(item, index) in problemSolvingData"
             :key="index"
             id="topic-map-container"
           >
-            <div v-if="index % 2 === 0" class="topic-container">
+            <div
+              v-if="index % 2 === 0"
+              class="topic-container"
+              :style="{
+                flexDirection: viewportIsVertical ? 'column' : 'row',
+              }"
+            >
               <component :is="item.tag" class="problem-solving-text">{{
                 item.text
               }}</component>
@@ -102,41 +109,31 @@ export default {
 </script>
 
 <style scoped>
+p {
+  font-weight: 600;
+  width: 100%;
+  margin: 0;
+}
+
 #problem-solving-section {
   padding: 4rem;
 }
 
 .problem-solving-text {
-  padding: 2rem 0;
+  padding: 2rem;
 }
 
-h1 {
-  text-align: center;
+#topic-map-container {
+  display: flex;
+  flex-direction: row;
 }
 
-h2 {
-  margin: 1rem;
-}
-
-#topic-map-container:nth-child(3) > div,
-#topic-map-container:nth-child(7) > div,
-#topic-map-container:nth-child(11) > div {
-  flex-direction: row-reverse;
-}
-
-#topic-map-container:nth-child(3) h2,
-#topic-map-container:nth-child(7) h2,
-#topic-map-container:nth-child(11) h2 {
+#topic-map-container:nth-child(4) h2,
+#topic-map-container:nth-child(8) h2,
+#topic-map-container:nth-child(12) h2 {
   margin-left: 4vw;
   margin-right: 0;
   padding-right: 0;
-  text-align: right;
-}
-
-p {
-  width: 100%;
-  padding: 0;
-  margin: 0;
 }
 
 .topic-section,
