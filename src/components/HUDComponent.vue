@@ -68,6 +68,46 @@
             <li>
               A descriptive explanation of my problem solving methodology.
             </li>
+            <h3>ATTRIBUTIONS</h3>
+            <li>
+              This portfolio was made possible by the generosity and talent of
+              the following:
+              <p>
+                <a
+                  href="https://www.flaticon.com/free-icons/portfolio"
+                  title="portfolio icons"
+                  >Portfolio icons created by Freepik - Flaticon</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.flaticon.com/free-icons/contact"
+                  title="contact icons"
+                  >Contact icons created by Cuputo - Flaticon</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.flaticon.com/free-icons/info"
+                  title="info icons"
+                  >Info icons created by Freepik - Flaticon</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.flaticon.com/free-icons/menu"
+                  title="menu icons"
+                  >Menu icons created by Freepik - Flaticon</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.flaticon.com/free-icons/close"
+                  title="close icons"
+                  >Close icons created by ariefstudio - Flaticon</a
+                >
+              </p>
+            </li>
           </ul>
         </div>
       </section>

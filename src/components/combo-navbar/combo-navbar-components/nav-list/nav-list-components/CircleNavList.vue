@@ -58,7 +58,7 @@ button:hover {
 
 .circle-container li:nth-of-type(4) {
   --angle: 270deg;
-  transform: translateX(-1.1rem) rotate(var(--angle, 0deg)) translateY(-100%);
+  transform: translateX(-1.2rem) rotate(var(--angle, 0deg)) translateY(-100%);
 }
 
 .nav-link {

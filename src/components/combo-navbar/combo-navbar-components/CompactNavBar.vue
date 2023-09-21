@@ -57,7 +57,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(32, 32, 32, 0.748);
+  background-color: rgba(22, 22, 22, 0.812);
   z-index: 1000;
   animation: fadeIn 0.2s ease-in-out;
 }
