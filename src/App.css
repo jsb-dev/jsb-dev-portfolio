@@ -200,8 +200,8 @@ button,
 #info-btn,
 .compact-nav-button {
   opacity: 0.9;
-  max-width: 90px;
-  max-height: 90px;
+  max-width: 70px;
+  max-height: 70px;
 }
 
 .horizontal-list:nth-child(1) > :hover,
