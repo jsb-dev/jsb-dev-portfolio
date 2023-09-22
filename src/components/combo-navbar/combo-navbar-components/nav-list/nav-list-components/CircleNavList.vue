@@ -32,33 +32,31 @@ button:hover {
   position: absolute;
   bottom: 9.5rem;
   right: 21rem;
-  background-color: black;
-  width: fit-content;
+  padding: 0 5rem;
 }
 
 .circle-container li {
   position: absolute;
   transform-origin: 50% 50%;
-  transform: rotate(var(--angle, 0deg)) translateY(-100%);
 }
 .circle-container li:nth-of-type(1) {
-  transform: translateX(0.4rem) rotate(var(--angle, 0deg)) translateY(-100%);
+  transform: translateX(0.35rem) rotate(var(--angle, 0deg)) translateY(-100%);
   --angle: 0deg;
 }
 
 .circle-container li:nth-of-type(2) {
   --angle: 90deg;
-  transform: translateX(0.7rem) rotate(var(--angle, 0deg)) translateY(-100%);
+  transform: rotate(var(--angle, 0deg)) translateY(-100%);
 }
 
 .circle-container li:nth-of-type(3) {
   --angle: 180deg;
-  transform: translateX(-1.1rem) rotate(var(--angle, 0deg)) translateY(-100%);
+  transform: translateX(-0.35rem) rotate(var(--angle, 0deg)) translateY(-100%);
 }
 
 .circle-container li:nth-of-type(4) {
   --angle: 270deg;
-  transform: translateX(-1.2rem) rotate(var(--angle, 0deg)) translateY(-100%);
+  transform: rotate(var(--angle, 0deg)) translateY(-100%);
 }
 
 .nav-link {

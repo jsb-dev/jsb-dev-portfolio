@@ -35,6 +35,6 @@ export default {
   top: min(7vh, 2rem);
   right: 0;
   z-index: 1005;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 </style>

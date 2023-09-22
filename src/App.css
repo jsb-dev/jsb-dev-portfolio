@@ -184,10 +184,11 @@ button,
   background: none;
   cursor: pointer;
   text-transform: uppercase;
-  border-radius: 4rem;
-  width: 6rem;
-  height: 6rem;
+  border-radius: 1rem;
+  width: 7rem;
+  height: 7rem;
   font-weight: 700;
+  font-size: min(1.5rem, 12pt);
   box-shadow: none;
 }
 
@@ -199,8 +200,8 @@ button,
 #info-btn,
 .compact-nav-button {
   opacity: 0.9;
-  max-width: 70px;
-  max-height: 70px;
+  max-width: 90px;
+  max-height: 90px;
 }
 
 .horizontal-list:nth-child(1) > :hover,
@@ -216,7 +217,6 @@ button,
 .hori-button-li:hover {
   transform: translateY(-3px);
   transition: all 0.3s ease-in-out;
-  border-radius: 1.8rem;
   opacity: 1;
 }
 
