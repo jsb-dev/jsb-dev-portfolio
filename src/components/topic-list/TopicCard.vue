@@ -11,7 +11,17 @@
           :id="'open-btn'"
           @click="openModal"
         >
-          Read
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            viewBox="0 0 576 512"
+          >
+            <path
+              d="M528.3 46.5H388.5c-48.1 0-89.9 33.3-100.4 80.3-10.6-47-52.3-80.3-100.4-80.3H48c-26.5 0-48 21.5-48 48v245.8c0 26.5 21.5 48 48 48h89.7c102.2 0 132.7 24.4 147.3 75 .7 2.8 5.2 2.8 6 0 14.7-50.6 45.2-75 147.3-75H528c26.5 0 48-21.5 48-48V94.6c0-26.4-21.3-47.9-47.7-48.1zM242 311.9c0 1.9-1.5 3.5-3.5 3.5H78.2c-1.9 0-3.5-1.5-3.5-3.5V289c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H78.2c-1.9 0-3.5-1.5-3.5-3.5v-22.9c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5V251zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H78.2c-1.9 0-3.5-1.5-3.5-3.5v-22.9c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm259.3 121.7c0 1.9-1.5 3.5-3.5 3.5H337.5c-1.9 0-3.5-1.5-3.5-3.5v-22.9c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H337.5c-1.9 0-3.5-1.5-3.5-3.5V228c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H337.5c-1.9 0-3.5-1.5-3.5-3.5v-22.8c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5V190z"
+              fill="rgb(185, 208, 237)"
+            />
+          </svg>
         </button>
         <button
           class="card-btn"
@@ -19,7 +29,17 @@
           :id="'close-btn'"
           @click="closeModal"
         >
-          Close
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              fill="rgb(185, 208, 237)"
+            />
+          </svg>
         </button>
       </div>
     </div>
@@ -27,15 +47,28 @@
     <section class="modal-container">
       <div
         v-if="showModal"
-        :class="
-          viewportIsVertical
-            ? 'vertical-modal-overlay'
-            : 'horizontal-modal-overlay'
-        "
+        :class="viewportIsVertical && 'vertical-modal-overlay'"
       >
         <div
           :class="viewportIsVertical ? 'vertical-modal' : 'horizontal-modal'"
         >
+          <button
+            v-if="viewportIsVertical"
+            class="close-button"
+            @click="closeModal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="100%"
+              width="100%"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                fill="#fff"
+              />
+            </svg>
+          </button>
           <article>
             {{ brief }}
           </article>
@@ -95,118 +128,33 @@ export default {
 </script>
 
 <style scoped>
-.card h3 {
-  font-size: 1.6rem;
-  padding-left: 4rem;
-  padding-top: 0.5rem;
-}
-
-.card-vertical h3 {
-  font-size: 1.2rem;
-  padding: 0 20rem;
-}
-
-li:has(.card-vertical) {
-  margin: 2rem;
-}
-
-.modal-container:has(.vertical-modal-overlay) {
-  transform: translateY(-5vh);
-}
-
-.vertical-modal-overlay {
-  background-color: rgba(0, 0, 0, 0.8);
+article {
+  text-align: center;
+  padding: 0 1rem;
   overflow: hidden;
-}
-
-.horizontal-modal-overlay,
-.vertical-modal-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.vertical-modal,
-.horizontal-modal {
-  box-shadow: 0 0 5rem 0.5rem rgba(255, 255, 255, 0.1),
-    inset 0 0 4rem 0.2rem rgba(255, 255, 255, 0.2);
-  background-color: #272727;
-  height: fit-content;
-}
-
-.vertical-modal {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  overflow: hidden;
-}
-
-.card-vertical,
-.vertical-modal {
-  min-width: 120px;
-  max-width: 120px;
-}
-
-.vertical-modal * {
-  font-weight: 200;
-}
-
-.horizontal-modal {
-  position: relative;
-  overflow-y: scroll;
-  height: 40vh;
-  overflow-y: scroll;
-}
-
-.vertical-modal *,
-.horizontal-modal * {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .card {
   box-shadow: inset 0 0 1rem 0.1rem rgba(0, 0, 0, 0.3),
     0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
-  min-width: 350px;
-  height: 20vh;
   margin: 1rem;
   display: flex;
-  justify-content: space-evenly;
-  background-color: #4a4956;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(60, 58, 85);
+  width: 30rem;
+  min-width: fit-content;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .card-vertical {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  height: 25vh;
-  padding: 2rem;
-}
-
-.card:hover {
-  box-shadow: inset 0 0 1rem 0.5rem rgba(0, 0, 0, 0.8),
-    0 0 1rem 0.1rem rgba(255, 255, 255, 0.5);
-  background-color: #2c2c2c;
-}
-
-.card:hover .card-button {
-  color: rgb(231, 231, 231);
-}
-
-.card-title {
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-article {
-  text-align: center;
-  font-size: min(2rem, 12pt);
+  height: 30rem;
+  width: 15rem;
 }
 
 .h3-container,
@@ -215,16 +163,53 @@ article {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.card > .h3-container {
-  margin-top: 0;
-  padding-left: 1rem;
+.card-title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
 }
 
-.card-vertical > .h3-container {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding-left: 0;
+.vertical-modal-overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.vertical-modal {
+  background-color: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+  position: relative;
+  display: flex;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.horizontal-modal {
+  width: 100%;
+  padding: 0 1rem;
+  height: fit-content;
+}
+
+.close-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
 }
 </style>

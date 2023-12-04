@@ -1,6 +1,18 @@
 <template>
   <div id="hud-container">
-    <button id="contact-btn" @click="toggleContactModal"></button>
+    <button id="contact-btn" @click="toggleContactModal">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="100%"
+        width="60%"
+        viewBox="0 0 576 512"
+      >
+        <path
+          d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
+          fill="rgb(185, 208, 237)"
+        />
+      </svg>
+    </button>
     <transition name="fade">
       <div v-if="showContactModal" id="contact-modal">
         <section id="contact-section">
@@ -27,7 +39,19 @@
       </div>
     </transition>
 
-    <button id="info-btn" @click="toggleInfoModal"></button>
+    <button id="info-btn" @click="toggleInfoModal">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="100%"
+        width="60%"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+          fill="rgb(185, 208, 237)"
+        />
+      </svg>
+    </button>
     <transition name="fade">
       <section>
         <div v-if="showInfoModal" id="info-modal">
@@ -68,46 +92,6 @@
             <li>
               A descriptive explanation of my problem solving methodology.
             </li>
-            <h3>ATTRIBUTIONS</h3>
-            <li>
-              This portfolio was made possible by the generosity and talent of
-              the following:
-              <p>
-                <a
-                  href="https://www.flaticon.com/free-icons/portfolio"
-                  title="portfolio icons"
-                  >Portfolio icons created by Freepik - Flaticon</a
-                >
-              </p>
-              <p>
-                <a
-                  href="https://www.flaticon.com/free-icons/contact"
-                  title="contact icons"
-                  >Contact icons created by Cuputo - Flaticon</a
-                >
-              </p>
-              <p>
-                <a
-                  href="https://www.flaticon.com/free-icons/info"
-                  title="info icons"
-                  >Info icons created by Freepik - Flaticon</a
-                >
-              </p>
-              <p>
-                <a
-                  href="https://www.flaticon.com/free-icons/menu"
-                  title="menu icons"
-                  >Menu icons created by Freepik - Flaticon</a
-                >
-              </p>
-              <p>
-                <a
-                  href="https://www.flaticon.com/free-icons/close"
-                  title="close icons"
-                  >Close icons created by ariefstudio - Flaticon</a
-                >
-              </p>
-            </li>
           </ul>
         </div>
       </section>
@@ -145,11 +129,6 @@ h2 {
 a {
   text-decoration: underline;
   color: rgb(185, 94, 238);
-}
-
-button {
-  margin: 1.8rem;
-  padding: 0;
 }
 
 img {
@@ -198,20 +177,24 @@ img {
   list-style-type: none;
 }
 
-#contact-btn,
-#info-btn,
-.compact-nav-button {
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 #contact-btn {
-  background-image: url('../assets/icons/contact.png');
+  position: fixed;
+  bottom: 0;
+  left: 0.5rem;
 }
 
 #info-btn {
-  background-image: url('../assets/icons/info.png');
+  position: fixed;
+  bottom: 0;
+  left: 10rem;
+}
+
+#contact-btn,
+#info-btn {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 3rem 0.1rem rgba(0, 0, 0, 0.8),
+    inset 0 0 1.6rem 0.2rem rgba(0, 0, 0, 0.7);
 }
 
 .fade-enter-active,

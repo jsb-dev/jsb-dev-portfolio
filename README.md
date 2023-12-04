@@ -1,24 +1,39 @@
-# task-1.3p
+# jsb-dev
 
-## Project setup
-```
-npm install
-```
+## Contents
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- [About the Project](#about-the-project)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Built With](#built-with)
+- [Contact](#contact)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## About the Project
 
-### Lints and fixes files
-```
-npm run lint
-```
+This is my first portfolio working demo. It includes past work, an educational breakdown of fundamental tech, and a comprehensive outline of my methodology for creating dynamic, responsive websites. I also demonstrate core knowledge of SPA development in a modern framework using only first-party resources.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Getting Started
+
+### Prerequisites
+
+Updating node and npm to their latest available version beforehand should ensure everything works fine.
+
+### Installation
+
+First, you'll need to install Vue.js with `npm install -g @vue/cli`. When you're ready, clone the repo and move into it before running `npm install`.
+
+## Built With
+
+This portfolio was built strictly with first-party Vue3 functionality:
+
+- `Vue3` for the development framework
+- `Vuex` for UI state management
+- Plain `html, css, js` for each component
+
+## Contact
+
+**Jacob Booth**
+
+- [Email](mailto:jsb-dev@outlook.com)
+- [YourGitHubProfile](https://github.com/jsb-dev)

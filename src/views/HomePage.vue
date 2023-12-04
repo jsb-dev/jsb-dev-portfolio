@@ -4,7 +4,7 @@
     class="page-shell"
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
-      <section id="content-container" class="content-container">
+      <section id="content-container">
         <h1>Hello there</h1>
         <section id="about-section">
           <h2>About Myself</h2>
@@ -94,7 +94,7 @@ export default {
   computed: {
     ...mapState(['viewportIsVertical', 'viewportIsPortable']),
     mainContainerHeight() {
-      return this.viewportIsVertical ? '96vh' : '82vh';
+      return this.viewportIsVertical ? '98dvh' : '90dvh';
     },
     pageShellAlignItems() {
       return this.viewportIsPortable ? 'center' : 'space-around';

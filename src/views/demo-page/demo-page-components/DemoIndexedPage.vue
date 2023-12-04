@@ -1,21 +1,24 @@
 <template>
-  <div
-    :style="{ alignItems: pageShellAlignItems, marginTop: pageShellMarginTop }"
-    class="page-shell"
-  >
-    <section
-      :style="{ ...listsContainerStyles, height: mainContainerHeight }"
-      class="main-container"
-    >
-      <section>
+  <div class="page-shell">
+    <section :style="{ ...listsContainerStyles }" class="main-container">
+      <section
+        class="content-container"
+        :style="{ marginTop: contentContainerMargin }"
+      >
         <h2>HTML</h2>
         <TopicList :topicData="htmlTopicData" />
       </section>
-      <section>
+      <section
+        class="content-container"
+        :style="{ marginTop: contentContainerMargin }"
+      >
         <h2>CSS</h2>
         <TopicList :topicData="cssTopicData" />
       </section>
-      <section>
+      <section
+        class="content-container"
+        :style="{ marginTop: contentContainerMargin }"
+      >
         <h2>JS</h2>
         <TopicList :topicData="jsTopicData" />
       </section>
@@ -39,14 +42,10 @@ export default {
   },
   computed: {
     ...mapState(['viewportIsVertical', 'viewportIsPortable']),
-    mainContainerHeight() {
-      return this.viewportIsVertical ? '96vh' : '82vh';
-    },
-    pageShellAlignItems() {
-      return this.viewportIsPortable ? 'center' : 'space-around';
-    },
-    pageShellMarginTop() {
-      return this.viewportIsPortable ? '0' : '.9vh';
+    contentContainerStyle() {
+      return {
+        marginTop: this.viewportIsVertical ? '5rem' : '0',
+      };
     },
   },
   setup() {
@@ -80,17 +79,14 @@ export default {
         justifyContent: 'space-between',
         alignItems: 'center',
       };
-      if (store.state.viewportIsVertical && store.state.viewportIsPortable) {
+      if (store.state.viewportIsPortable && !store.state.viewportIsVertical) {
         return {
           ...baseStyles,
-          paddingTop: '20vh',
-          flexWrap: 'none',
-          overflow: 'hidden',
+          flexDirection: 'column',
         };
       } else {
         return {
           ...baseStyles,
-          flexDirection: 'column',
         };
       }
     });
@@ -106,7 +102,11 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  text-align: center;
+section {
+  margin: 0;
+}
+
+.content-container {
+  margin-top: min(5rem, 20px);
 }
 </style>

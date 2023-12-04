@@ -11,6 +11,7 @@
             <component :is="item.tag">{{ item.text }}</component>
             <div v-if="item.tag === 'h2'">
               <VideoPlayer
+                class="video-player"
                 v-for="(assetName, assetIndex) in videoAssets[item.text]"
                 :key="assetIndex"
                 :assetName="assetName"
@@ -46,7 +47,7 @@ export default {
   computed: {
     ...mapState(['viewportIsVertical', 'viewportIsPortable']),
     mainContainerHeight() {
-      return this.viewportIsVertical ? '96vh' : '82vh';
+      return this.viewportIsVertical ? '98dvh' : '90dvh';
     },
     pageShellAlignItems() {
       return this.viewportIsPortable ? 'center' : 'space-around';
@@ -73,6 +74,19 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin: 2rem;
+}
+
+p {
+  padding: 1rem 2rem;
+}
+
+h2,
+p {
+  margin: 2rem 0 4rem;
+}
+
 #portfolio-section {
   padding: 1rem 2rem;
   display: flex;
@@ -80,11 +94,7 @@ export default {
   align-items: center;
 }
 
-h1 {
-  margin: 2rem 2rem 0 0;
-}
-
-p {
-  margin: 1rem 0 5rem 0;
+.video-player {
+  margin: 2rem 0;
 }
 </style>

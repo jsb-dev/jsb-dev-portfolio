@@ -4,15 +4,15 @@ export default createStore({
   state: {
     viewportIsVertical: window.innerWidth < window.innerHeight,
     viewportIsPortable:
-      (window.innerWidth < window.innerHeight && window.innerWidth < 600) ||
-      (window.innerWidth >= window.innerHeight && window.innerWidth < 950),
+      (window.innerWidth < window.innerHeight && window.innerWidth < 800) ||
+      (window.innerWidth >= window.innerHeight && window.innerWidth < 1800),
   },
   mutations: {
     updateLayout(state) {
       state.viewportIsVertical = window.innerWidth < window.innerHeight;
       state.viewportIsPortable =
-        (state.viewportIsVertical && window.innerWidth < 600) ||
-        (!state.viewportIsVertical && window.innerWidth < 950);
+        (state.viewportIsVertical && window.innerWidth < 800) ||
+        (!state.viewportIsVertical && window.innerWidth < 1800);
     },
   },
   actions: {

@@ -1,87 +1,118 @@
 <template>
-  <ul class="circle-container">
-    <li class="button-li">
-      <router-link to="/" class="nav-link">
-        <button class="nav-button">Home</button>
-      </router-link>
-    </li>
-    <li class="button-li">
-      <router-link to="/demo" class="nav-link">
-        <button class="nav-button">Demo</button>
-      </router-link>
-    </li>
-    <li class="button-li">
-      <router-link to="/portfolio" class="nav-link">
-        <button class="nav-button">Portfolio</button>
-      </router-link>
-    </li>
-    <li class="button-li">
-      <router-link to="/methodology" class="nav-link">
-        <button class="nav-button">Method</button>
-      </router-link>
-    </li>
-  </ul>
+  <div id="list-container">
+    <ul>
+      <li id="home-link-li">
+        <router-link to="/" class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            viewBox="0 0 576 512"
+          >
+            <path
+              d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+              fill="rgb(185, 208, 237)"
+            />
+          </svg>
+        </router-link>
+      </li>
+      <li id="demo-link-li">
+        <router-link to="/demo" class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6C495 83.4 512 107.5 512 134.6V377.4c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66L82.3 128 256 190l173.7-62L256 66zm32 368.6l160-57.1v-188L288 246.6v188z"
+              fill="rgb(185, 208, 237)"
+            />
+          </svg>
+        </router-link>
+      </li>
+      <li id="portfolio-link-li">
+        <router-link to="/portfolio" class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"
+              fill="rgb(185, 208, 237)"
+            />
+          </svg>
+        </router-link>
+      </li>
+    </ul>
+    <ul>
+      <li id="method-link-li">
+        <router-link to="/methodology" class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"
+              fill="rgb(185, 208, 237)"
+            />
+          </svg>
+        </router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
-button:hover {
-  box-shadow: none;
-}
-.circle-container {
+#list-container {
   list-style-type: none;
-  position: absolute;
-  bottom: 9.5rem;
-  right: 21rem;
-  padding: 0 5rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100dvw;
+  height: 100dvh;
 }
 
-.circle-container li {
-  position: absolute;
-  transform-origin: 50% 50%;
-}
-.circle-container li:nth-of-type(1) {
-  transform: translateX(0.35rem) rotate(var(--angle, 0deg)) translateY(-100%);
-  --angle: 0deg;
+ul {
+  list-style: none;
+  position: fixed;
+  bottom: 20%;
+  right: min(40%, 180px);
 }
 
-.circle-container li:nth-of-type(2) {
-  --angle: 90deg;
-  transform: rotate(var(--angle, 0deg)) translateY(-100%);
+#home-link-li,
+#demo-link-li,
+#portfolio-link-li,
+#method-link-li {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(69, 112, 163);
+  box-shadow: 0 0 3rem 0.1rem rgba(0, 0, 0, 0.8),
+    inset 0 0 1.6rem 0.2rem rgba(0, 0, 0, 0.7);
 }
 
-.circle-container li:nth-of-type(3) {
-  --angle: 180deg;
-  transform: translateX(-0.35rem) rotate(var(--angle, 0deg)) translateY(-100%);
+#home-link-li {
+  transform: translate(110%, 100%);
 }
 
-.circle-container li:nth-of-type(4) {
-  --angle: 270deg;
-  transform: rotate(var(--angle, 0deg)) translateY(-100%);
+#demo-link-li {
+  transform: translate(220%, 100%);
+}
+
+#portfolio-link-li {
+  transform: translate(110%, 100%);
+}
+
+#method-link-li {
+  transform: translateY(-0.8rem);
 }
 
 .nav-link {
-  display: flex;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(var(--text-rotate, 0deg));
-  width: fit-content;
-  height: fit-content;
-}
-
-.circle-container li:nth-child(1) .nav-link {
-  --text-rotate: -0deg;
-}
-
-.circle-container li:nth-child(2) .nav-link {
-  --text-rotate: -90deg;
-}
-
-.circle-container li:nth-child(3) .nav-link {
-  --text-rotate: -180deg;
-}
-
-.circle-container li:nth-child(4) .nav-link {
-  --text-rotate: -270deg;
+  width: 50px;
+  height: 50px;
 }
 </style>

@@ -1,5 +1,7 @@
+/* /////////////////////////////////////////////////// LAYOUT /////////////////////////////////////////////////// */
+
 :root {
-  font-size: 1vmax;
+  font-size: 1dvmax;
 }
 
 * {
@@ -8,23 +10,45 @@
   box-sizing: border-box;
   border-radius: 0.5rem;
   border: none;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  scrollbar-width: thin;
-  scrollbar-color: #565656 #dcdcdc;
+  font-family: 'Inter', 'Roboto', Arial, Helvetica, sans-serif;
   text-decoration: none;
-  color: rgb(232, 222, 255);
   letter-spacing: 0.1rem;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-*:hover {
-  transition: all 0.1s ease-in-out;
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 0;
+  background-color: #1d1d1d;
 }
 
-body {
-  transition: all 0.1s ease-in-out;
+img {
+  max-width: 40rem;
+  border-radius: 2rem;
+  animation: fadeIn 1s ease-in-out;
+  margin: 3vh 0;
+}
+
+.main-container,
+.page-shell {
+  display: flex;
+  justify-content: center;
+  animation: none;
+}
+
+.page-shell {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* /////////////////////////////////////////////////// SCROLLBAR /////////////////////////////////////////////////// */
+
+body,
+body * {
+  scrollbar-color: #565656 #dcdcdc;
 }
 
 ::-webkit-scrollbar {
@@ -48,13 +72,7 @@ body {
   border-radius: 2rem;
 }
 
-#app {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  border-radius: 0;
-  background-color: #1d1d1d;
-}
+/* /////////////////////////////////////////////////// THEME /////////////////////////////////////////////////// */
 
 h1,
 h2,
@@ -64,8 +82,8 @@ h4 {
 }
 
 h1 {
-  font-size: max(2rem, 12pt);
-  color: rgb(155, 153, 255);
+  font-size: 15pt;
+  color: rgb(61, 111, 172);
   letter-spacing: 0.2rem;
   word-spacing: 0.3rem;
   margin-top: 5vh;
@@ -73,123 +91,45 @@ h1 {
 }
 
 h2 {
-  font-size: max(1.5rem, 11pt);
-  color: rgb(147, 158, 240);
+  font-size: 14pt;
+  color: rgb(82, 122, 171);
   letter-spacing: 0.2rem;
   word-spacing: 0.4rem;
   margin-left: 0.5rem;
 }
 
 h3 {
-  font-size: max(1rem, 10pt);
-  color: rgb(175, 186, 252);
+  font-size: 13pt;
+  color: rgb(113, 139, 171);
   font-weight: 700;
   letter-spacing: 0.3rem;
   word-spacing: 0.5rem;
 }
 
-strong {
-  font-size: max(0.9rem, 9pt);
-  color: rgb(231, 224, 224);
-  font-weight: 700;
-  padding: 0;
-}
-
 p,
+li,
 a,
 code,
 button,
 article,
-article * {
-  font-size: max(1rem, 10pt);
-  font-weight: 400;
-}
-
-p,
-code,
-button,
-article {
-  margin: 3rem;
-}
-
-p,
-h3,
-code {
-  padding: 0 1rem;
-}
-
 section {
+  color: rgb(185, 208, 237);
   margin: 1rem 0;
-}
-
-img {
-  max-width: 40rem;
-  border-radius: 2rem;
-  animation: fadeIn 1s ease-in-out;
-  margin: 3vh 0;
-}
-
-.main-container,
-.page-shell {
-  display: flex;
-  justify-content: center;
-  transition: none;
-  animation: none;
-}
-
-.page-shell {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.main-container {
-  width: 94vw;
-  height: 82vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background-color: #1d1d1d;
-  box-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 1),
-    inset 0 0 4rem 0.1rem rgba(255, 255, 255, 0.4);
-}
-
-.main-container * {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.content-container > *:last-of-type {
-  padding-bottom: 7vh;
-}
-
-button {
-  box-shadow: -0.3rem -0.3rem 1rem 0.5rem rgba(0, 0, 0, 0.3),
-    inset 0.3rem 0.3rem 0.5rem 0.1rem rgba(255, 255, 255, 0.2);
-}
-
-button:hover {
-  box-shadow: inset -0.3rem -0.3rem 1rem 0.5rem rgba(0, 0, 0, 0.3),
-    0.3rem 0.3rem 0.5rem 0.1rem rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease-in-out;
+  padding: 1rem 0;
+  font-size: 12pt;
 }
 
 button,
 .button-li,
-#open-btn,
-#close-btn,
-#demo-button,
-#contact-btn,
-#info-btn,
 .compact-nav-button {
   border: none;
   background: none;
   cursor: pointer;
   text-transform: uppercase;
-  border-radius: 1rem;
   width: 7rem;
   height: 7rem;
-  font-weight: 700;
-  font-size: min(1.5rem, 12pt);
-  box-shadow: none;
+  font-size: 12pt;
+  color: #fff;
 }
 
 button,
@@ -199,60 +139,39 @@ button,
 #contact-btn,
 #info-btn,
 .compact-nav-button {
-  opacity: 0.9;
   max-width: 70px;
   max-height: 70px;
 }
+button {
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+}
 
-.horizontal-list:nth-child(1) > :hover,
-.compact-nav-button:hover,
-.button-li:hover,
-#demo-button:hover,
-#open-btn:hover,
-#close-btn:hover,
-#demo-button:hover,
-.compact-nav-button:hover,
-#contact-btn:hover,
-#info-btn:hover,
-.hori-button-li:hover {
-  transform: translateY(-3px);
-  transition: all 0.3s ease-in-out;
-  opacity: 1;
+#demo-button {
+  background-color: rgb(100, 156, 88);
 }
 
 #contact-btn,
 #info-btn,
-.hori-button-li {
-  background-color: #166294;
-}
-
-.hori-button-li:hover,
-.compact-nav-button:hover {
-  background-color: #145783;
-}
-
-#demo-button {
-  background-color: #ca873bb8;
-}
-
-#demo-button:hover {
-  background-color: #c28125ab;
-}
-
 #open-btn {
-  background-color: rgb(60, 142, 75);
-}
-
-#open-btn:hover {
-  background-color: rgb(52, 130, 66);
+  background-color: rgb(69, 112, 163);
 }
 
 #close-btn {
-  background-color: rgb(177, 57, 57);
+  background-color: rgb(163, 72, 72);
 }
 
-#close-btn:hover {
-  background-color: rgb(152, 38, 38);
+.main-container {
+  width: 98dvw;
+  height: 98dvh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #1d1d1d;
+  box-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 1),
+    inset 0 0 1rem 0.5rem rgba(255, 255, 255, 0.2);
+}
+
+.main-container * {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {

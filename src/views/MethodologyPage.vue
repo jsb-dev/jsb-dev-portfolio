@@ -19,7 +19,7 @@
               v-if="index % 2 === 0"
               class="topic-container"
               :style="{
-                flexDirection: viewportIsVertical ? 'column' : 'row',
+                flexDirection: viewportIsPortable ? 'column' : 'row',
               }"
             >
               <component :is="item.tag" class="problem-solving-text">{{
@@ -61,7 +61,7 @@ export default {
   computed: {
     ...mapState(['viewportIsVertical', 'viewportIsPortable']),
     mainContainerHeight() {
-      return this.viewportIsVertical ? '96vh' : '82vh';
+      return this.viewportIsVertical ? '98dvh' : '90dvh';
     },
     pageShellAlignItems() {
       return this.viewportIsPortable ? 'center' : 'space-around';
@@ -109,9 +109,8 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-weight: 600;
-  width: 100%;
+h2 {
+  padding: 0;
   margin: 0;
 }
 

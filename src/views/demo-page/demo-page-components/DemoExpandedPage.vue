@@ -4,7 +4,10 @@
     class="page-shell"
   >
     <div :style="{ height: mainContainerHeight }" class="main-container">
-      <section class="content-container">
+      <section
+        class="content-container"
+        :style="{ 'grid-template-columns': gridTemplateColumns }"
+      >
         <h1>HTML, CSS and JavaScript</h1>
 
         <section class="topic-section" id="html-section">
@@ -90,13 +93,16 @@ export default {
   computed: {
     ...mapState(['viewportIsVertical', 'viewportIsPortable']),
     mainContainerHeight() {
-      return this.viewportIsVertical ? '96vh' : '82vh';
+      return this.viewportIsVertical ? '98dvh' : '90dvh';
     },
     pageShellAlignItems() {
       return this.viewportIsPortable ? 'center' : 'space-around';
     },
     pageShellMarginTop() {
       return this.viewportIsPortable ? '0' : '3vh';
+    },
+    gridTemplateColumns() {
+      return this.viewportIsPortable ? '1fr' : '1fr 1fr';
     },
   },
   setup() {
@@ -117,26 +123,12 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  margin: 1rem;
-}
-
+h1,
 h2,
 h3,
 p,
 code {
-  margin: 5rem 0;
-}
-
-#css-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-gap: 1rem;
-}
-
-#css-section .h2-container {
-  display: flex;
+  margin: 3rem;
 }
 
 code {
@@ -146,14 +138,27 @@ code {
   display: block;
 }
 
-.topic-section,
-section {
-  padding: 1rem 2rem;
+section,
+.main-container {
+  margin: 3rem;
+  max-width: 95%;
+}
+
+.topic-map-container {
+  padding: 1rem;
+}
+
+#css-section {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+#css-section .h2-container {
+  display: flex;
 }
 
 #html-section .topic-map-container:nth-child(even) {
   box-shadow: inset 0 0 3rem 0.2rem rgba(255, 255, 255, 0.2);
-  padding: 2rem;
 }
 
 #html-section .topic-map-container:nth-child(even) * {
